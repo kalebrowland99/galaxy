@@ -89,7 +89,7 @@ const Hero = () => {
             >
               Galaxy23
               <span className="block text-3xl md:text-4xl lg:text-5xl mt-6 font-light text-gray-700">
-                Flag Football Tournament
+                7v7 Football Tournament
               </span>
             </motion.h1>
             
@@ -97,7 +97,7 @@ const Hero = () => {
               variants={itemVariants}
               className="text-body text-gray-600 max-w-2xl mb-16 leading-relaxed"
             >
-              Join the ultimate 7v7 flag football experience! Compete with the best teams, 
+              Join the ultimate 7v7 football experience! Compete with the best teams, 
               showcase your skills, and battle for the championship trophy in the most 
               prestigious tournament of the year.
             </motion.p>

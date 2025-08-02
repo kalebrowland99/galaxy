@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import { motion } from 'framer-motion';
 import { 
@@ -31,7 +32,7 @@ const Home = () => {
     {
       icon: Star,
       title: 'Elite Competition',
-      description: 'Face off against the best flag football teams in the region.'
+      description: 'Face off against the best 7v7 football teams in the region.'
     },
     {
       icon: Award,
@@ -44,7 +45,7 @@ const Home = () => {
     { number: '50', label: 'Teams', icon: Users },
     { number: '7v7', label: 'Format', icon: Shield },
     { number: '$10K', label: 'Prize Pool', icon: Trophy },
-    { number: '3', label: 'Divisions', icon: Target }
+    { number: 'Elite', label: 'Competition', icon: Target }
   ];
 
   const containerVariants = {
@@ -88,7 +89,7 @@ const Home = () => {
               Why Choose Galaxy23?
             </h2>
             <p className="text-body text-gray-600 max-w-3xl mx-auto">
-              Experience the ultimate flag football tournament with professional organization, 
+              Experience the ultimate 7v7 football tournament with professional organization, 
               competitive play, and unforgettable memories that will last a lifetime.
             </p>
           </motion.div>
@@ -171,16 +172,16 @@ const Home = () => {
               Ready to Compete?
             </h2>
             <p className="text-body text-gray-600 mb-12 max-w-2xl mx-auto">
-              Don't miss your chance to be part of the most exciting flag football tournament of the year. 
+              Don't miss your chance to be part of the most exciting 7v7 football tournament of the year. 
               Register your team today and secure your spot in this elite competition!
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="btn-secondary">
+              <Link to="/register" className="btn-secondary">
                 Register Your Team
-              </button>
-              <button className="btn-outline">
+              </Link>
+              <Link to="/schedule" className="btn-outline">
                 View Tournament Rules
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -13,7 +13,7 @@ const Register = () => {
     {
       icon: Trophy,
       title: 'Tournament Entry',
-      description: 'Secure your spot in the most prestigious flag football tournament.'
+      description: 'Secure your spot in the most prestigious 7v7 football tournament.'
     },
     {
       icon: Award,
@@ -37,8 +37,8 @@ const Register = () => {
               Team Registration
             </h1>
             <p className="text-body text-blue-100 max-w-3xl mx-auto">
-              Join the Galaxy23 Flag Football Tournament! Register your team below and secure your spot 
-              in the most competitive 7v7 flag football tournament of the year.
+                      Join the Galaxy23 7v7 Football Tournament! Register your team below and secure your spot
+        in the most competitive 7v7 football tournament of the year.
             </p>
           </motion.div>
         </div>

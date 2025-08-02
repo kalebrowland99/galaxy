@@ -8,6 +8,8 @@ import Schedule from './pages/Schedule';
 import WatchLive from './pages/WatchLive';
 import Sponsors from './pages/Sponsors';
 import About from './pages/About';
+import TeamGear from './pages/TeamGear';
+import PaymentSuccess from './pages/PaymentSuccess';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/watch" element={<WatchLive />} />
             <Route path="/sponsors" element={<Sponsors />} />
             <Route path="/about" element={<About />} />
+            <Route path="/gear" element={<TeamGear />} />
+            <Route path="/payment-success" element={<PaymentSuccess />} />
           </Routes>
         </main>
         <Toaster

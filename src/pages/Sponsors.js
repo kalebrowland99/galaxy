@@ -262,7 +262,13 @@ const Sponsors = () => {
                   ))}
                 </div>
                 
-                <button className="w-full mt-8 btn-primary">
+                <button 
+                  className="w-full mt-8 btn-primary"
+                  onClick={() => {
+                    // Open email client with sponsorship inquiry
+                    window.location.href = 'mailto:sponsors@galaxy23.com?subject=Sponsorship Inquiry - ' + tier.name + ' Tier';
+                  }}
+                >
                   Become a {tier.name} Sponsor
                 </button>
               </motion.div>
@@ -288,10 +294,22 @@ const Sponsors = () => {
               players, coaches, and fans. Let's create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="btn-secondary">
+              <button 
+                className="btn-secondary"
+                onClick={() => {
+                  // Open email client with contact form
+                  window.location.href = 'mailto:contact@galaxy23.com?subject=Partnership Inquiry';
+                }}
+              >
                 Contact Us Today
               </button>
-              <button className="btn-outline bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary-600">
+              <button 
+                className="btn-outline bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary-600"
+                onClick={() => {
+                  // Download sponsorship kit (placeholder)
+                  alert('Sponsorship kit download would be implemented here. For now, please contact us at sponsors@galaxy23.com');
+                }}
+              >
                 Download Sponsorship Kit
               </button>
             </div>

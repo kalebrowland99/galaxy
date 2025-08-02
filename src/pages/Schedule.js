@@ -1,25 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, MapPin, Users } from 'lucide-react';
 
 const Schedule = () => {
-  const [selectedDay, setSelectedDay] = useState('all');
-  const [selectedDivision, setSelectedDivision] = useState('all');
-
-  const days = [
-    { id: 'all', name: 'All Days' },
-    { id: 'friday', name: 'Friday' },
-    { id: 'saturday', name: 'Saturday' },
-    { id: 'sunday', name: 'Sunday' }
-  ];
-
-  const divisions = [
-    { id: 'all', name: 'All Divisions' },
-    { id: 'open', name: 'Open Division' },
-    { id: 'masters', name: 'Masters Division' },
-    { id: 'youth', name: 'Youth Division' }
-  ];
-
   const games = [
     {
       id: 1,
@@ -83,12 +66,6 @@ const Schedule = () => {
     }
   ];
 
-  const filteredGames = games.filter(game => {
-    const dayMatch = selectedDay === 'all' || game.day === selectedDay;
-    const divisionMatch = selectedDivision === 'all' || game.division === selectedDivision;
-    return dayMatch && divisionMatch;
-  });
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -111,45 +88,6 @@ const Schedule = () => {
         </div>
       </div>
 
-      {/* Filters */}
-      <section className="py-12 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto container-padding">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            <div className="flex flex-wrap gap-4">
-              {days.map((day) => (
-                <button
-                  key={day.id}
-                  onClick={() => setSelectedDay(day.id)}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    selectedDay === day.id
-                      ? 'bg-primary-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {day.name}
-                </button>
-              ))}
-            </div>
-            
-            <div className="flex flex-wrap gap-4">
-              {divisions.map((division) => (
-                <button
-                  key={division.id}
-                  onClick={() => setSelectedDivision(division.id)}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    selectedDivision === division.id
-                      ? 'bg-primary-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {division.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Schedule */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto container-padding">
@@ -159,7 +97,7 @@ const Schedule = () => {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
           >
-            {filteredGames.map((game, index) => (
+            {games.map((game, index) => (
               <motion.div
                 key={game.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -201,7 +139,7 @@ const Schedule = () => {
             ))}
           </motion.div>
           
-          {filteredGames.length === 0 && (
+          {games.length === 0 && (
             <div className="text-center py-16">
               <div className="text-gray-500 text-lg">
                 No games found for the selected filters.

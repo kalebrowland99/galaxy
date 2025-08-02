@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Trophy, Users, Heart, Target } from 'lucide-react';
 
@@ -292,10 +293,16 @@ const About = () => {
               Register your team today and create memories that will last a lifetime.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="btn-secondary">
+              <Link to="/register" className="btn-secondary">
                 Register Your Team
-              </button>
-              <button className="btn-outline bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary-600">
+              </Link>
+              <button 
+                className="btn-outline bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary-600"
+                onClick={() => {
+                  // Open email client with contact form
+                  window.location.href = 'mailto:contact@galaxy23.com?subject=General Inquiry';
+                }}
+              >
                 Contact Us
               </button>
             </div>

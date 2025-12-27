@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
@@ -31,8 +31,13 @@ const RegistrationForm = () => {
 
   // Check if all fields for step 2 are filled
   const isStep2Complete = () => {
-    const step2Fields = ['coachName', 'coachEmail', 'coachPhone', 'coachBirthday', 'emergencyName', 'emergencyPhone'];
-    return step2Fields.every(field => watchedFields[field] && watchedFields[field].toString().trim() !== '');
+    const step2Fields = ['coachName', 'coachEmail', 'coachPhone', 'coachBirthday', 'photoIdAcknowledged', 'emergencyName', 'emergencyPhone'];
+    return step2Fields.every(field => {
+      if (field === 'photoIdAcknowledged') {
+        return watchedFields[field] === true;
+      }
+      return watchedFields[field] && watchedFields[field].toString().trim() !== '';
+    });
   };
 
   const onSubmit = async (data) => {
@@ -101,8 +106,17 @@ const RegistrationForm = () => {
     }
   };
 
-  const nextStep = () => setStep(step + 1);
-  const prevStep = () => setStep(step - 1);
+  // Scroll to top when step changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step]);
+
+  const nextStep = () => {
+    setStep(step + 1);
+  };
+  const prevStep = () => {
+    setStep(step - 1);
+  };
 
   const renderStep1 = () => (
     <motion.div
@@ -164,15 +178,15 @@ const RegistrationForm = () => {
           </label>
           <input
             type="number"
-            min="7"
-            max="12"
+            min="12"
+            max="20"
             {...register('playerCount', { 
               required: 'Player count is required',
-              min: { value: 7, message: 'Minimum 7 players required' },
-              max: { value: 12, message: 'Maximum 12 players allowed' }
+              min: { value: 12, message: 'Minimum 12 players required' },
+              max: { value: 20, message: 'Maximum 20 players allowed' }
             })}
             className="input-field"
-            placeholder="7-12 players"
+            placeholder="12-20 players"
           />
           {errors.playerCount && (
             <p className="text-red-500 text-sm mt-1 flex items-center">
@@ -317,17 +331,62 @@ const RegistrationForm = () => {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Date of Birth *
+            Date of Birth * (Must be 18 or older)
           </label>
           <input
             type="date"
-            {...register('coachBirthday', { required: 'Date of birth is required' })}
+            {...register('coachBirthday', { 
+              required: 'Date of birth is required',
+              validate: {
+                isAdult: (value) => {
+                  if (!value) return true; // Let required handle empty
+                  const birthDate = new Date(value);
+                  const today = new Date();
+                  const age = today.getFullYear() - birthDate.getFullYear();
+                  const monthDiff = today.getMonth() - birthDate.getMonth();
+                  const dayDiff = today.getDate() - birthDate.getDate();
+                  
+                  const actualAge = (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) ? age - 1 : age;
+                  return actualAge >= 18 || 'Coach must be at least 18 years old';
+                }
+              }
+            })}
             className="input-field"
+            max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
           />
           {errors.coachBirthday && (
             <p className="text-red-500 text-sm mt-1 flex items-center">
               <AlertCircle className="w-4 h-4 mr-1" />
               {errors.coachBirthday.message}
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Photo ID Verification */}
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+        <h3 className="text-lg font-semibold text-yellow-900 mb-3">Photo ID Verification Required</h3>
+        <p className="text-yellow-800 text-sm mb-4">
+          All coaches must provide a valid government-issued photo ID (driver's license, passport, or state ID) for age verification. 
+          You will be required to present this ID at tournament check-in.
+        </p>
+        <div>
+          <label className="flex items-start">
+            <input
+              type="checkbox"
+              {...register('photoIdAcknowledged', { 
+                required: 'You must acknowledge that you will provide photo ID verification'
+              })}
+              className="w-4 h-4 text-galaxy-600 border-gray-300 rounded focus:ring-galaxy-500 mt-1"
+            />
+            <span className="ml-2 text-sm text-yellow-800">
+              I acknowledge that I will provide a valid government-issued photo ID at tournament check-in for age verification *
+            </span>
+          </label>
+          {errors.photoIdAcknowledged && (
+            <p className="text-red-500 text-sm mt-1 flex items-center">
+              <AlertCircle className="w-4 h-4 mr-1" />
+              {errors.photoIdAcknowledged.message}
             </p>
           )}
         </div>
@@ -414,7 +473,7 @@ const RegistrationForm = () => {
     >
       <div className="text-center mb-8">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 font-display">Payment & Waiver</h2>
-        <p className="text-gray-600 mt-2">Step 3 of 3: Complete Registration</p>
+        <p className="text-gray-600 mt-2">Full payment is due 3 weeks prior to the event. *All dates subject to change.</p>
       </div>
 
       {/* Registration Deposit */}

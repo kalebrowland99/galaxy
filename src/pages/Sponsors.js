@@ -3,51 +3,13 @@ import { motion } from 'framer-motion';
 import { DollarSign, Star, Award, Users } from 'lucide-react';
 
 const Sponsors = () => {
-  const currentSponsors = [
-    {
-      name: 'Nike',
-      tier: 'platinum',
-      logo: 'N',
-      description: 'Official athletic wear partner of Galaxy23'
-    },
-    {
-      name: 'Gatorade',
-      tier: 'platinum',
-      logo: 'G',
-      description: 'Official hydration partner'
-    },
-    {
-      name: 'Under Armour',
-      tier: 'gold',
-      logo: 'U',
-      description: 'Official equipment partner'
-    },
-    {
-      name: 'Adidas',
-      tier: 'gold',
-      logo: 'A',
-      description: 'Official footwear partner'
-    },
-    {
-      name: 'Powerade',
-      tier: 'silver',
-      logo: 'P',
-      description: 'Official sports drink partner'
-    },
-    {
-      name: 'Wilson',
-      tier: 'silver',
-      logo: 'W',
-      description: 'Official ball partner'
-    }
-  ];
-
   const sponsorshipTiers = [
     {
       name: 'Platinum',
       price: '$10,000',
       color: 'from-gray-400 to-gray-600',
       benefits: [
+        'Five 30 second commericials 2 pre game, 1 Half time and 2 post game, 2 live billboard reads and logo placement on the alternating scoreboard sponsor loop with exclusivity',
         'Premium logo placement on all tournament materials',
         'Exclusive naming rights to tournament divisions',
         'VIP access to all tournament events',
@@ -63,6 +25,7 @@ const Sponsors = () => {
       price: '$5,000',
       color: 'from-yellow-400 to-yellow-600',
       benefits: [
+        'Two 30 second commericials 1 pre game and 1 post game, 2 live billboard reads and logo placement on the alternating scoreboard sponsor loop',
         'Prominent logo placement on tournament materials',
         'VIP access to tournament events',
         'Branded merchandise distribution',
@@ -77,6 +40,7 @@ const Sponsors = () => {
       price: '$2,500',
       color: 'from-gray-300 to-gray-500',
       benefits: [
+        '1 live billboard read and logo placement on the live stream alternating scoreboard sponsor loop',
         'Logo placement on tournament materials',
         'Access to tournament events',
         'Branded merchandise distribution',
@@ -100,26 +64,50 @@ const Sponsors = () => {
 
   const stats = [
     { number: '10K+', label: 'Social Media Reach', icon: Users },
-    { number: '50', label: 'Teams Competing', icon: Award },
-    { number: '3', label: 'Days of Action', icon: Star },
-    { number: '$10K', label: 'Prize Pool', icon: DollarSign }
+    { number: '50', label: 'Teams Competing', icon: Award }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-primary-600 text-white">
-        <div className="max-w-7xl mx-auto container-padding py-20">
+      <div className="relative overflow-hidden" style={{ height: '25vh', minHeight: '200px' }}>
+        {/* Sunset Football Field Background */}
+        <div className="absolute inset-0" style={{ opacity: 0.5 }}>
+          <img
+            src="/sunset-football-field.png"
+            alt="Sunset Football Field"
+            className="w-full h-full object-cover"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+        <div className="max-w-7xl mx-auto container-padding py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="heading-xl mb-6">
+            <h1 
+              className="heading-xl mb-6 font-bold"
+              style={{
+                color: '#8B4513',
+                textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
+                letterSpacing: '0.05em',
+                filter: 'drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4))',
+                fontWeight: '900',
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale',
+                textStroke: '1px rgba(255, 255, 255, 0.3)',
+                WebkitTextStroke: '1px rgba(255, 255, 255, 0.3)'
+              }}
+            >
               Sponsors & Partners
             </h1>
-            <p className="text-body text-blue-100 max-w-3xl mx-auto">
+            <p className="text-body max-w-3xl mx-auto" style={{
+              color: '#8B4513',
+              textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
+              fontWeight: '700'
+            }}>
               Join the elite group of sponsors who support the Galaxy23 Flag Football Tournament. 
               Partner with us to reach thousands of athletes, fans, and sports enthusiasts.
             </p>
@@ -135,7 +123,7 @@ const Sponsors = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-2 gap-8"
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
@@ -164,7 +152,7 @@ const Sponsors = () => {
         </div>
       </section>
 
-      {/* Current Sponsors */}
+      {/* Why Sponsor Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto container-padding">
           <motion.div
@@ -175,42 +163,121 @@ const Sponsors = () => {
             className="text-center mb-16"
           >
             <h2 className="heading-lg text-gray-900 mb-6">
-              Our Current Sponsors
+              Why Partner With Galaxy23?
             </h2>
-            <p className="text-body text-gray-600 max-w-3xl mx-auto">
-              Meet the prestigious brands that support the Galaxy23 tournament and help make it possible.
+            <p className="text-body text-gray-600 max-w-3xl mx-auto mb-12">
+              Join a premier sporting event that connects your brand with a passionate, engaged community of athletes, coaches, and sports enthusiasts. Our tournament offers unparalleled opportunities for brand exposure, community engagement, and meaningful connections.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {currentSponsors.map((sponsor, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="card-elevated p-8"
+            >
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="heading-md text-gray-900 mb-4">
+                Reach Your Target Audience
+              </h3>
+              <p className="text-body-sm text-gray-600">
+                Connect with 50+ elite teams, hundreds of athletes, and thousands of engaged fans. Our tournament attracts passionate flag football players, coaches, and sports enthusiasts who value quality, performance, and excellence—the perfect audience for your brand.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="card-elevated p-8"
+            >
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
+                <Star className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="heading-md text-gray-900 mb-4">
+                Maximum Brand Exposure
+              </h3>
+              <p className="text-body-sm text-gray-600">
+                Your brand will be featured across all tournament materials, digital platforms, social media campaigns, and live event coverage. With multi-day exposure and comprehensive marketing support, your sponsorship investment delivers measurable visibility and impact.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="card-elevated p-8"
+            >
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="heading-md text-gray-900 mb-4">
+                Align With Excellence
+              </h3>
+              <p className="text-body-sm text-gray-600">
+                Associate your brand with a premier tournament known for competitive excellence, professional organization, and community values. Sponsoring Galaxy23 positions your company alongside the best in flag football and demonstrates your commitment to supporting athletic achievement.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="card-elevated p-8"
+            >
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
+                <DollarSign className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="heading-md text-gray-900 mb-4">
+                Measurable ROI
+              </h3>
+              <p className="text-body-sm text-gray-600">
+                Receive detailed analytics on brand impressions, social media engagement, and audience reach. Our comprehensive reporting ensures you can track the value and impact of your sponsorship investment with clear, actionable metrics.
+              </p>
+            </motion.div>
+
               <motion.div
-                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="card-elevated text-center group"
+              className="card-elevated p-8"
               >
-                <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl ${
-                  sponsor.tier === 'platinum' ? 'bg-gradient-to-r from-gray-400 to-gray-600' :
-                  sponsor.tier === 'gold' ? 'bg-gradient-to-r from-yellow-400 to-yellow-600' :
-                  sponsor.tier === 'silver' ? 'bg-gradient-to-r from-gray-300 to-gray-500' :
-                  'bg-gradient-to-r from-orange-400 to-orange-600'
-                }`}>
-                  {sponsor.logo}
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
+                <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="heading-md text-gray-900 mb-2">
-                  {sponsor.name}
+              <h3 className="heading-md text-gray-900 mb-4">
+                Exclusive Access & Experiences
                 </h3>
-                <p className="text-primary-600 font-semibold mb-4 capitalize">
-                  {sponsor.tier} Partner
-                </p>
+              <p className="text-body-sm text-gray-600">
+                Enjoy VIP access to all tournament events, exclusive networking opportunities with team leaders and coaches, and the chance to present awards at ceremonies. Create meaningful connections and memorable experiences for your team and clients.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="card-elevated p-8"
+            >
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="heading-md text-gray-900 mb-4">
+                Custom Partnership Opportunities
+              </h3>
                 <p className="text-body-sm text-gray-600">
-                  {sponsor.description}
+                We work with each sponsor to create tailored partnership packages that align with your marketing goals. From product placement and sampling to custom activations and co-branded content, we'll design a sponsorship that delivers maximum value for your brand.
                 </p>
               </motion.div>
-            ))}
           </div>
         </div>
       </section>

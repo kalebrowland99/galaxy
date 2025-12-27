@@ -2,6 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes shine {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(220, 38, 38, 0.8),
+      0 0 20px rgba(220, 38, 38, 0.6),
+      0 0 30px rgba(220, 38, 38, 0.4),
+      2px 2px 8px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(255, 255, 255, 0.9);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(220, 38, 38, 1),
+      0 0 40px rgba(220, 38, 38, 0.8),
+      0 0 60px rgba(220, 38, 38, 0.6),
+      2px 2px 8px rgba(0, 0, 0, 0.5),
+      0 0 50px rgba(255, 255, 255, 1);
+  }
+  100% {
+    text-shadow: 
+      0 0 10px rgba(220, 38, 38, 0.8),
+      0 0 20px rgba(220, 38, 38, 0.6),
+      0 0 30px rgba(220, 38, 38, 0.4),
+      2px 2px 8px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(255, 255, 255, 0.9);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes shineBlack {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(0, 0, 0, 0.8),
+      0 0 20px rgba(0, 0, 0, 0.6),
+      0 0 30px rgba(0, 0, 0, 0.4),
+      2px 2px 8px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(255, 255, 255, 0.9);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(0, 0, 0, 1),
+      0 0 40px rgba(0, 0, 0, 0.8),
+      0 0 60px rgba(0, 0, 0, 0.6),
+      2px 2px 8px rgba(0, 0, 0, 0.5),
+      0 0 50px rgba(255, 255, 255, 1);
+  }
+  100% {
+    text-shadow: 
+      0 0 10px rgba(0, 0, 0, 0.8),
+      0 0 20px rgba(0, 0, 0, 0.6),
+      0 0 30px rgba(0, 0, 0, 0.4),
+      2px 2px 8px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(255, 255, 255, 0.9);
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

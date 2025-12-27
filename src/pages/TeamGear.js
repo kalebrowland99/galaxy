@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Shield, Package, Truck, CreditCard 
@@ -8,59 +8,39 @@ const TeamGear = () => {
   const gearItems = [
     {
       id: 1,
-      name: 'Product (1)',
-      description: 'High-quality team gear item for optimal performance.',
-      price: 45.00,
+      name: 'Shell Helmet',
+      description: 'Custom team colors and logo',
+      price: 50.00,
       category: 'safety',
-      image: '/gear/IMG_5748.jpg',
+      image: '/Soft Helmet.PNG',
       inStock: true,
       required: true
     },
     {
       id: 2,
-      name: 'Product (2)',
-      description: 'Premium team equipment designed for comfort and durability.',
-      price: 35.00,
+      name: 'Galaxy Skill Gloves',
+      description: 'Wide reciever gloves to elevate your game to another Galaxy',
+      price: 40.00,
       category: 'apparel',
-      image: '/gear/IMG_5834.jpg',
+      image: '/Skill Gloves.PNG',
       inStock: true,
       required: false
     },
     {
       id: 3,
-      name: 'Product (3)',
+      name: 'TRXN Fit Gloves',
       description: 'Professional athletic gear for competitive play.',
-      price: 25.00,
+      price: 35.00,
       category: 'apparel',
       image: '/gear/IMG_5807.jpeg',
       inStock: true,
       required: false
     },
     {
-      id: 4,
-      name: 'Product (4)',
-      description: 'Team-branded equipment for ultimate performance.',
-      price: 40.00,
-      category: 'apparel',
-      image: '/gear/IMG_5806.jpeg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 5,
-      name: 'Product (5)',
-      description: 'Durable team gear for equipment storage and transport.',
-      price: 30.00,
-      category: 'accessories',
-      image: '/gear/IMG_5835.jpg',
-      inStock: true,
-      required: false
-    },
-    {
       id: 6,
-      name: 'Product (6)',
-      description: 'Stylish team accessory with embroidered branding.',
-      price: 20.00,
+      name: 'Custom Team Uniform with Warm Up',
+      description: 'Custom Sublimated Team Gear',
+      price: 100.00,
       category: 'accessories',
       image: '/gear/IMG_5746.jpg',
       inStock: true,
@@ -68,9 +48,9 @@ const TeamGear = () => {
     },
     {
       id: 7,
-      name: 'Product (7)',
-      description: 'Performance gear designed for training and practice sessions.',
-      price: 28.00,
+      name: 'Custom Team Socks',
+      description: 'High Preformance Gear',
+      price: 15.00,
       category: 'apparel',
       image: '/gear/IMG_5725.jpg',
       inStock: true,
@@ -78,9 +58,9 @@ const TeamGear = () => {
     },
     {
       id: 8,
-      name: 'Product (8)',
+      name: 'Custom Team Uniform',
       description: 'Advanced performance equipment for enhanced mobility.',
-      price: 15.00,
+      price: 45.00,
       category: 'accessories',
       image: '/gear/IMG_5722.jpg',
       inStock: true,
@@ -88,7 +68,7 @@ const TeamGear = () => {
     },
     {
       id: 9,
-      name: 'Product (9)',
+      name: 'Custom Spats',
       description: 'High-quality team accessories for optimal comfort.',
       price: 12.00,
       category: 'accessories',
@@ -97,29 +77,9 @@ const TeamGear = () => {
       required: false
     },
     {
-      id: 10,
-      name: 'Product (10)',
-      description: 'Performance equipment for enhanced grip and control.',
-      price: 18.00,
-      category: 'accessories',
-      image: '/gear/IMG_5662.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 11,
-      name: 'Product (11)',
-      description: 'Weather-resistant team gear for various conditions.',
-      price: 55.00,
-      category: 'apparel',
-      image: '/gear/IMG_5626.jpg',
-      inStock: true,
-      required: false
-    },
-    {
       id: 12,
-      name: 'Product (12)',
-      description: 'Large capacity equipment storage for team gear.',
+      name: 'MySpace Gloves',
+      description: 'Lightweight Sticky Gloves',
       price: 45.00,
       category: 'accessories',
       image: '/gear/IMG_5414.jpg',
@@ -128,9 +88,9 @@ const TeamGear = () => {
     },
     {
       id: 13,
-      name: 'Product (13)',
-      description: 'Comfortable team gear for pre-game preparation.',
-      price: 32.00,
+      name: 'Why So Serious Gloves',
+      description: 'Ulltimate Performance Sticky Gloves',
+      price: 50.00,
       category: 'apparel',
       image: '/gear/IMG_5413.jpg',
       inStock: true,
@@ -138,61 +98,21 @@ const TeamGear = () => {
     },
     {
       id: 14,
-      name: 'Product (14)',
-      description: 'Lightweight performance gear for layering and comfort.',
-      price: 38.00,
+      name: 'Custom Gloves',
+      description: 'Custom team gloves for ultimate performance.',
+      price: 45.00,
       category: 'apparel',
-      image: '/gear/E15447C7-E3F6-4972-BBD0-D3E24ADF3B8C.jpg',
+      image: '/gear/IMG_5834.jpg',
       inStock: true,
       required: false
     },
     {
       id: 15,
-      name: 'Product (15)',
-      description: 'Durable team gear for daily use and storage.',
-      price: 42.00,
+      name: 'Out of This World Fan Gear',
+      description: 'Premium fan gear to show your team spirit.',
+      price: 25.00,
       category: 'accessories',
-      image: '/gear/A094AA5A-E52F-47F3-B867-3CEA6E989A87.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 16,
-      name: 'Product (16)',
-      description: 'Performance gear designed for training and practice.',
-      price: 22.00,
-      category: 'apparel',
-      image: '/gear/76A4521D-C6BA-46B8-8415-C64FE1311DCA.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 17,
-      name: 'Product (17)',
-      description: 'Team accessory for cold weather protection.',
-      price: 16.00,
-      category: 'accessories',
-      image: '/gear/5257735B-2044-44EF-8000-CA238D00D3AB.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 18,
-      name: 'Product (18)',
-      description: 'High-performance team gear for optimal comfort.',
-      price: 26.00,
-      category: 'apparel',
-      image: '/gear/4DBEDD19-FE26-4D46-917F-1CAB9E5C8255.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 19,
-      name: 'Product (19)',
-      description: 'Essential team accessory for post-game use.',
-      price: 8.00,
-      category: 'accessories',
-      image: '/gear/42ECFC10-DD1E-457A-8746-81F4ED12D7CE.jpg',
+      image: '/fan gear.PNG',
       inStock: true,
       required: false
     }
@@ -201,31 +121,61 @@ const TeamGear = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative overflow-hidden" style={{ height: '25vh', minHeight: '200px' }}>
+        {/* Sunset Football Field Background */}
+        <div className="absolute inset-0" style={{ opacity: 0.5 }}>
+          <img
+            src="/sunset-football-field.png"
+            alt="Sunset Football Field"
+            className="w-full h-full object-cover"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+        <div className="max-w-7xl mx-auto container-padding py-20 relative z-10">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h1 
+                className="heading-xl mb-6 font-bold"
+                style={{
+                  color: '#8B4513',
+                  textShadow: '4px 4px 12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 1), 2px 2px 4px rgba(255, 255, 255, 0.6)',
+                  letterSpacing: '0.05em',
+                  filter: 'drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5))',
+                  fontWeight: '900',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  textStroke: '1.5px rgba(255, 255, 255, 0.4)',
+                  WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.4)'
+                }}
+              >
                 Team Gear Store
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100 mb-8">
+              <p className="text-body max-w-3xl mx-auto" style={{
+                color: '#8B4513',
+                textShadow: '3px 3px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 1), 1px 1px 3px rgba(255, 255, 255, 0.6)',
+                fontWeight: '700'
+              }}>
                 Get your team equipped for the Galaxy23 7v7 Tournament
               </p>
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8" style={{
+                color: '#8B4513',
+                textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.8)',
+                fontWeight: '600'
+              }}>
                 <div className="flex items-center">
-                  <Shield className="w-6 h-6 mr-2" />
+                  <Shield className="w-6 h-6 mr-2" style={{ filter: 'drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5))' }} />
                   <span>Required Safety Equipment</span>
                 </div>
                 <div className="flex items-center">
-                  <Package className="w-6 h-6 mr-2" />
+                  <Package className="w-6 h-6 mr-2" style={{ filter: 'drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5))' }} />
                   <span>Team Branding</span>
                 </div>
                 <div className="flex items-center">
-                  <Truck className="w-6 h-6 mr-2" />
+                  <Truck className="w-6 h-6 mr-2" style={{ filter: 'drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5))' }} />
                   <span>Fast Shipping</span>
                 </div>
               </div>
@@ -242,7 +192,7 @@ const TeamGear = () => {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <Shield className="w-6 h-6 mr-2 text-red-600" />
-                Safety Equipment (Required)
+                Safety equipment is required. Quick link if you need to purchase
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {gearItems.filter(item => item.category === 'safety').map((item) => (
@@ -276,16 +226,43 @@ const TeamGear = () => {
 };
 
 const GearCard = ({ item, required }) => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [imageRef, setImageRef] = useState(null);
+
+  const handleMouseMove = (e) => {
+    if (imageRef) {
+      const rect = imageRef.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      setMousePosition({ x, y });
+    }
+  };
+
   return (
     <motion.div
       whileHover={{ y: -5 }}
       className="bg-white rounded-lg shadow-lg overflow-hidden"
     >
-      <div className="aspect-w-16 aspect-h-9 bg-gray-200">
+      <div 
+        className="bg-gray-200" 
+        style={{ aspectRatio: '16/9', position: 'relative', overflow: 'hidden' }}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        onMouseMove={handleMouseMove}
+      >
         <img
+          ref={setImageRef}
           src={item.image}
           alt={item.name}
-          className="w-full h-48 object-cover"
+          className="w-full h-full cursor-zoom-in"
+          style={{ 
+            aspectRatio: item.id === 2 ? '16/9' : 'auto',
+            objectFit: (item.id === 13 || item.id === 15) ? 'contain' : 'cover',
+            transform: isHovering ? `scale(2)` : 'scale(1)',
+            transformOrigin: `${mousePosition.x}% ${mousePosition.y}%`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
       </div>
       

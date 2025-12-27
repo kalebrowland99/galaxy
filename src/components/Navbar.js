@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Trophy, Users, Calendar, Heart, Eye, Info, ShoppingBag } from 'lucide-react';
+import { Menu, X, Trophy, Users, Calendar, Heart, Eye, Info, ShoppingBag, Shield, CalendarDays } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +19,12 @@ const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: Trophy },
     { name: 'Register', href: '/register', icon: Users },
+    { name: 'Events', href: '/events', icon: CalendarDays },
     { name: 'Schedule', href: '/schedule', icon: Calendar },
     { name: 'Watch Live', href: '/watch', icon: Eye },
     { name: 'Team Gear', href: '/gear', icon: ShoppingBag },
     { name: 'Sponsors', href: '/sponsors', icon: Heart },
+    { name: 'Rules', href: '/rules', icon: Shield },
     { name: 'About', href: '/about', icon: Info },
   ];
 

@@ -29,19 +29,22 @@ const About = () => {
 
   const team = [
     {
-      name: 'Michael Johnson',
-      role: 'Tournament Director',
-      bio: 'Former professional flag football player with 15+ years of tournament organization experience.'
+      name: 'Dj Pendergrass',
+      role: 'Events Coordinator',
+      bio: 'Dj has been a Multi sport head coach for 19+ years teaching kids what it takes to become men/woman while helping them to excel. He is a youth community advocate',
+      image: '/DJ 1.jpeg'
     },
     {
-      name: 'Sarah Williams',
+      name: 'Evan Smith',
       role: 'Operations Manager',
-      bio: 'Sports management professional dedicated to creating seamless tournament experiences.'
+      bio: 'Evan has 19+ years working big live video production\'s in sports, music and corperate events. He is also a  youth community advocate',
+      image: '/evan photo galaxy sports.PNG'
     },
     {
-      name: 'David Chen',
+      name: 'Jacob Schneider',
       role: 'Technical Director',
-      bio: 'Expert in tournament logistics and field management with a passion for the sport.'
+      bio: 'Jacob has 19+ years of overseeing big projects to make sure they are successful. He is also a youth community advocate',
+      image: '/jake piece of shit picture.PNG'
     }
   ];
 
@@ -71,18 +74,44 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-primary-600 text-white">
-        <div className="max-w-7xl mx-auto container-padding py-20">
+      <div className="relative overflow-hidden" style={{ height: '25vh', minHeight: '200px' }}>
+        {/* Sunset Football Field Background */}
+        <div className="absolute inset-0" style={{ opacity: 0.5 }}>
+          <img
+            src="/sunset-football-field.png"
+            alt="Sunset Football Field"
+            className="w-full h-full object-cover"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+        <div className="max-w-7xl mx-auto container-padding py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="heading-xl mb-6">
+            <h1 
+              className="heading-xl mb-6 font-bold"
+              style={{
+                color: '#8B4513',
+                textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
+                letterSpacing: '0.05em',
+                filter: 'drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4))',
+                fontWeight: '900',
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale',
+                textStroke: '1px rgba(255, 255, 255, 0.3)',
+                WebkitTextStroke: '1px rgba(255, 255, 255, 0.3)'
+              }}
+            >
               About Galaxy23
             </h1>
-            <p className="text-body text-blue-100 max-w-3xl mx-auto">
+            <p className="text-body max-w-3xl mx-auto" style={{
+              color: '#8B4513',
+              textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
+              fontWeight: '700'
+            }}>
               Discover the story behind the most prestigious flag football tournament in the region. 
               Learn about our mission, values, and the team that makes it all possible.
             </p>
@@ -215,9 +244,22 @@ const About = () => {
                 viewport={{ once: true }}
                 className="card-elevated text-center"
               >
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-6 mx-auto">
-                  <Users className="w-6 h-6 text-white" />
-                </div>
+                {member.image ? (
+                  <div className="w-full mx-auto mb-6 rounded-lg overflow-hidden flex items-center justify-center bg-gray-100" style={{ aspectRatio: 'auto' }}>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-auto object-contain"
+                      onError={(e) => {
+                        console.error('Image failed to load:', e.target.src);
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                )}
                 <h3 className="heading-md text-gray-900 mb-2">
                   {member.name}
                 </h3>
@@ -309,6 +351,32 @@ const About = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Developer Footer */}
+      <footer className="py-8 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto container-padding">
+          <div className="text-center">
+            <p className="text-sm text-gray-400">
+              Developed by{' '}
+              <a 
+                href="mailto:kalebrowland99@gmail.com" 
+                className="text-gray-500 hover:text-primary-600 transition-colors duration-200"
+              >
+                Kaleb
+              </a>
+              {' '}
+              <span className="text-gray-300">•</span>
+              {' '}
+              <a 
+                href="mailto:kalebrowland99@gmail.com" 
+                className="text-gray-400 hover:text-primary-600 transition-colors duration-200 text-xs"
+              >
+                kalebrowland99@gmail.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

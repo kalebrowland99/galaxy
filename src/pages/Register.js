@@ -1,78 +1,52 @@
 import React from 'react';
 import RegistrationForm from '../components/RegistrationForm';
 import { motion } from 'framer-motion';
-import { Users, Trophy, Award } from 'lucide-react';
-
 const Register = () => {
-  const features = [
-    {
-      icon: Users,
-      title: 'Team Registration',
-      description: 'Register your team with all required information and documentation.'
-    },
-    {
-      icon: Trophy,
-      title: 'Tournament Entry',
-      description: 'Secure your spot in the most prestigious 7v7 football tournament.'
-    },
-    {
-      icon: Award,
-      title: 'Prize Pool',
-      description: 'Compete for over $10,000 in cash prizes and championship trophies.'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <div className="bg-primary-600 text-white">
-        <div className="max-w-7xl mx-auto container-padding py-20">
+      <div className="relative overflow-hidden" style={{ height: '25vh', minHeight: '200px' }}>
+        {/* Sunset Football Field Background */}
+        <div className="absolute inset-0" style={{ opacity: 0.5 }}>
+          <img
+            src="/sunset-football-field.png"
+            alt="Sunset Football Field"
+            className="w-full h-full object-cover"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+        <div className="max-w-7xl mx-auto container-padding py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="heading-xl mb-6">
+            <h1 
+              className="heading-xl mb-6 font-bold"
+              style={{
+                color: '#8B4513',
+                textShadow: '2px 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.8)',
+                letterSpacing: '0.05em',
+                filter: 'drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.3))',
+                fontWeight: '800',
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale'
+              }}
+            >
               Team Registration
             </h1>
-            <p className="text-body text-blue-100 max-w-3xl mx-auto">
-                      Join the Galaxy23 7v7 Football Tournament! Register your team below and secure your spot
-        in the most competitive 7v7 football tournament of the year.
+            <p className="text-body max-w-3xl mx-auto" style={{
+              color: '#8B4513',
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.8)',
+              fontWeight: '600'
+            }}>
+              Fill out the form below to register your team for the Galaxy23 tournament. $1,000 per team with a multiple team discount. Secure your spot now with a $250 non-refundable deposit.
             </p>
           </motion.div>
         </div>
       </div>
-
-      {/* Features Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto container-padding">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="heading-md text-gray-900 mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-body-sm text-gray-600">
-                    {feature.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Registration Form Section */}
       <section className="py-16 bg-gray-50">
@@ -87,7 +61,7 @@ const Register = () => {
               Complete Your Registration
             </h2>
             <p className="text-body text-gray-600">
-              Fill out the form below to register your team for the Galaxy23 tournament.
+              Fill out the form below to register your team for the Galaxy23 tournament. $1,000 per team with a multiple team discount. Secure your spot with a $250 non-refundable deposit.
             </p>
           </motion.div>
           

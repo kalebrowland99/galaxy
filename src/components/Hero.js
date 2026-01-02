@@ -90,15 +90,16 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="text-center lg:text-left">
             <motion.div
               variants={itemVariants}
-              className="mb-6 relative inline-block rounded-3xl overflow-hidden w-full max-w-md border-4 border-white"
+              className="mb-6 relative inline-block rounded-3xl overflow-hidden border-4 border-white"
             >
               <img
                 src="/galaxy sports logo.JPG"
                 alt="Galaxy23 Sports"
-                className="max-w-full h-auto rounded-3xl w-full"
+                className="h-auto rounded-3xl"
                 style={{
                   maxHeight: '281px',
-                  objectFit: 'contain'
+                  objectFit: 'contain',
+                  display: 'block'
                 }}
               />
             </motion.div>

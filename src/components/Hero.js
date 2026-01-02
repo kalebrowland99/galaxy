@@ -106,24 +106,20 @@ const Hero = () => {
             {/* Upcoming Event Box */}
             <motion.div
               variants={itemVariants}
-              className="mb-6 inline-block px-6 py-4 rounded-2xl shadow-lg w-full max-w-2xl"
+              className="mb-8 inline-block px-6 py-6 rounded-2xl shadow-lg w-full max-w-2xl"
               style={{
                 backgroundColor: '#000000'
               }}
             >
-              <p className="text-base md:text-lg lg:text-xl font-semibold text-white text-center">
+              <p className="text-base md:text-lg lg:text-xl font-semibold text-white text-center mb-4">
                 Upcoming event: 7v7 Football Tournament End of April 2026 in Murfreesboro, TN.
               </p>
+              <p className="text-base md:text-lg lg:text-xl text-white text-center leading-relaxed font-semibold">
+                Join the ultimate 7v7 experience! Compete with the best teams,
+                showcase your skills, and battle for the championship trophy in the most
+                prestigious tournament of the year.
+              </p>
             </motion.div>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-base md:text-lg lg:text-xl text-white max-w-2xl mb-8 leading-relaxed font-semibold drop-shadow-lg"
-            >
-              Join the ultimate 7v7 experience! Compete with the best teams,
-              showcase your skills, and battle for the championship trophy in the most
-              prestigious tournament of the year.
-            </motion.p>
 
             {/* CTA Buttons */}
             <motion.div

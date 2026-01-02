@@ -109,7 +109,7 @@ const Home = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className={`card-elevated group w-full ${feature.image ? 'p-0 overflow-hidden' : ''}`}
+                  className={`card-elevated group w-full border-4 border-black ${feature.image ? 'p-0 overflow-hidden' : ''}`}
                 >
                   {feature.image ? (
                     <div className="relative w-full aspect-video group-hover:scale-105 transition-transform duration-300">
@@ -174,10 +174,10 @@ const Home = () => {
               <Link to="/register" className="btn-secondary">
                 Register Your Team
               </Link>
-              <Link to="/rules" className="btn-outline">
+              <Link to="/rules" className="btn-outline border-4 border-black">
                 View Tournament Rules
               </Link>
-              <Link to="/gear" className="btn-outline">
+              <Link to="/gear" className="btn-outline border-4 border-black">
                 View Team Gear
               </Link>
             </div>
@@ -201,7 +201,7 @@ const Home = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="text-center"
+                  className="text-center border-4 border-black rounded-2xl p-6 bg-white/10 backdrop-blur-sm"
                 >
                   <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
                     <Icon className="w-10 h-10 text-white" />

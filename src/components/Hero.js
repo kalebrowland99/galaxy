@@ -90,12 +90,12 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="text-center lg:text-left">
             <motion.div
               variants={itemVariants}
-              className="mb-6 relative inline-block rounded-2xl overflow-hidden w-full max-w-md"
+              className="mb-6 relative inline-block rounded-3xl overflow-hidden w-full max-w-md border-4 border-white"
             >
               <img
                 src="/galaxy sports logo.JPG"
                 alt="Galaxy23 Sports"
-                className="max-w-full h-auto rounded-2xl w-full"
+                className="max-w-full h-auto rounded-3xl w-full"
                 style={{
                   maxHeight: '281px',
                   objectFit: 'contain'
@@ -106,7 +106,7 @@ const Hero = () => {
             {/* Upcoming Event Box */}
             <motion.div
               variants={itemVariants}
-              className="mb-8 inline-block px-6 py-6 rounded-2xl shadow-lg w-full max-w-2xl"
+              className="mb-8 inline-block px-6 py-6 rounded-2xl shadow-lg w-full max-w-2xl border-4 border-white"
               style={{
                 backgroundColor: '#000000'
               }}
@@ -141,47 +141,47 @@ const Hero = () => {
             variants={itemVariants}
             className="relative"
           >
-            <div className="relative bg-gray-50 rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-2xl">
-              <div className="text-center mb-8">
-                <Link to="/register">
+            <Link to="/register" className="block">
+              <div className="relative bg-gray-50 rounded-3xl p-6 sm:p-10 border-4 border-black shadow-2xl hover:shadow-3xl transition-shadow duration-300 cursor-pointer">
+                <div className="text-center mb-8">
                   <motion.h3
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     whileHover={{ scale: 1.1, color: '#6a0dad' }}
                     transition={{ delay: 0.5, duration: 0.6 }}
-                    className="text-3xl font-semibold mb-2 text-primary-600 cursor-pointer"
+                    className="text-3xl font-semibold mb-2 text-primary-600"
                   >
                     Team Registration
                   </motion.h3>
-                </Link>
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7, duration: 0.6 }}
-                  className="text-gray-600 text-lg"
-                >
-                  Secure your spot in the tournament
-                </motion.p>
-              </div>
-
-              <div className="relative rounded-2xl overflow-hidden border border-primary-100 aspect-[4/3]">
-                <video
-                  src="/animated logo video.MOV"
-                  autoPlay
-                  loop
-                  playsInline
-                  muted
-                  className="w-full h-full object-cover"
-                >
-                  Your browser does not support the video tag.
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 text-white drop-shadow-lg">
-                  <p className="text-lg sm:text-2xl font-semibold">Galaxy23 7v7 Tournament</p>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.6 }}
+                    className="text-gray-600 text-lg"
+                  >
+                    Secure your spot in the tournament
+                  </motion.p>
                 </div>
-              </div>
 
-            </div>
+                <div className="relative rounded-2xl overflow-hidden border border-primary-100 aspect-[4/3]">
+                  <video
+                    src="/animated logo video.MOV"
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                    className="w-full h-full object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white drop-shadow-lg">
+                    <p className="text-lg sm:text-2xl font-semibold">Galaxy23 7v7 Tournament</p>
+                  </div>
+                </div>
+
+              </div>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

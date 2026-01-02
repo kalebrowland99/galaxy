@@ -93,7 +93,7 @@ const Rules = () => {
     {
       icon: Shield,
       title: 'Player Safety',
-      description: 'All players must wear appropriate athletic attire and flag belts. No jewelry, watches, or hard objects are permitted during play.'
+      description: 'All players must wear appropriate athletic attire. No jewelry, watches, or hard objects are permitted during play.'
     },
     {
       icon: AlertTriangle,
@@ -102,7 +102,7 @@ const Rules = () => {
     },
     {
       icon: Users,
-      title: 'Sportsmanship',
+      title: 'Sportsman-ship',
       description: 'Respect for opponents, officials, and spectators is mandatory. Unsportsmanlike conduct will result in penalties or ejection.'
     },
     {
@@ -205,8 +205,7 @@ const Rules = () => {
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
               fontWeight: '700'
             }}>
-              Review the official rules, safety guidelines, and conduct policies for the Galaxy23 
-              Flag Football Tournament. All participants must adhere to these standards.
+              Review the official rules, safety guidelines, and conduct policies
             </p>
           </motion.div>
         </div>
@@ -291,7 +290,12 @@ const Rules = () => {
                   <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="heading-md text-gray-900 mb-4">
+                  <h3 className="heading-md text-gray-900 mb-4" style={{
+                    wordBreak: 'break-word',
+                    lineHeight: '1.3',
+                    fontSize: guideline.title === 'Sportsman-ship' ? 'clamp(1rem, 2vw, 1.25rem)' : undefined,
+                    textAlign: guideline.title === 'Sportsman-ship' ? 'left' : 'center'
+                  }}>
                     {guideline.title}
                   </h3>
                   <p className="text-body-sm text-gray-600">

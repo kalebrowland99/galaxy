@@ -37,38 +37,8 @@ const TeamGear = () => {
       required: false
     },
     {
-      id: 6,
-      name: 'Custom Team Uniform with Warm Up',
-      description: 'Custom Sublimated Team Gear',
-      price: 100.00,
-      category: 'accessories',
-      image: '/gear/IMG_5746.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 7,
-      name: 'Custom Team Socks',
-      description: 'High Preformance Gear',
-      price: 15.00,
-      category: 'apparel',
-      image: '/gear/IMG_5725.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 8,
-      name: 'Custom Team Uniform',
-      description: 'Advanced performance equipment for enhanced mobility.',
-      price: 45.00,
-      category: 'accessories',
-      image: '/gear/IMG_5722.jpg',
-      inStock: true,
-      required: false
-    },
-    {
       id: 9,
-      name: 'Custom Spats',
+      name: 'Can\'t Guard Me Spats',
       description: 'High-quality team accessories for optimal comfort.',
       price: 12.00,
       category: 'accessories',
@@ -93,26 +63,6 @@ const TeamGear = () => {
       price: 50.00,
       category: 'apparel',
       image: '/gear/IMG_5413.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 14,
-      name: 'Custom Gloves',
-      description: 'Custom team gloves for ultimate performance.',
-      price: 45.00,
-      category: 'apparel',
-      image: '/gear/IMG_5834.jpg',
-      inStock: true,
-      required: false
-    },
-    {
-      id: 15,
-      name: 'Out of This World Fan Gear',
-      description: 'Premium fan gear to show your team spirit.',
-      price: 25.00,
-      category: 'accessories',
-      image: '/fan gear.PNG',
       inStock: true,
       required: false
     }
@@ -244,9 +194,16 @@ const GearCard = ({ item, required }) => {
       whileHover={{ y: -5 }}
       className="bg-white rounded-lg shadow-lg overflow-hidden"
     >
-      <div 
-        className="bg-gray-200" 
-        style={{ aspectRatio: '16/9', position: 'relative', overflow: 'hidden' }}
+      <div
+        className={(item.id === 13) ? "bg-white" : "bg-gray-200"}
+        style={{
+          aspectRatio: '16/9',
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onMouseMove={handleMouseMove}
@@ -255,10 +212,13 @@ const GearCard = ({ item, required }) => {
           ref={setImageRef}
           src={item.image}
           alt={item.name}
-          className="w-full h-full cursor-zoom-in"
-          style={{ 
+          className={(item.id === 13) ? "w-full h-full cursor-zoom-in object-contain" : "w-full h-full cursor-zoom-in"}
+          style={{
             aspectRatio: item.id === 2 ? '16/9' : 'auto',
-            objectFit: (item.id === 13 || item.id === 15) ? 'contain' : 'cover',
+            objectFit: (item.id === 13) ? 'contain' : 'cover',
+            objectPosition: 'center',
+            width: (item.id === 13) ? '100%' : 'auto',
+            height: (item.id === 13) ? '100%' : 'auto',
             transform: isHovering ? `scale(2)` : 'scale(1)',
             transformOrigin: `${mousePosition.x}% ${mousePosition.y}%`,
             transition: 'transform 0.1s ease-out'
@@ -301,4 +261,4 @@ const GearCard = ({ item, required }) => {
   );
 };
 
-export default TeamGear; 
+export default TeamGear;

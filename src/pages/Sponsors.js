@@ -62,10 +62,6 @@ const Sponsors = () => {
     }
   ];
 
-  const stats = [
-    { number: '10K+', label: 'Social Media Reach', icon: Users },
-    { number: '50', label: 'Teams Competing', icon: Award }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -108,49 +104,11 @@ const Sponsors = () => {
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
               fontWeight: '700'
             }}>
-              Join the elite group of sponsors who support the Galaxy23 Flag Football Tournament. 
-              Partner with us to reach thousands of athletes, fans, and sports enthusiasts.
+              Join the elite group of sponsors who support the Galaxy23 7v7 Tournament.
             </p>
           </motion.div>
         </div>
       </div>
-
-      {/* Stats */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-8"
-          >
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-600 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Why Sponsor Section */}
       <section className="py-16 bg-gray-50">
@@ -185,7 +143,7 @@ const Sponsors = () => {
                 Reach Your Target Audience
               </h3>
               <p className="text-body-sm text-gray-600">
-                Connect with 50+ elite teams, hundreds of athletes, and thousands of engaged fans. Our tournament attracts passionate flag football players, coaches, and sports enthusiasts who value quality, performance, and excellence—the perfect audience for your brand.
+                Hundreds of athletes, and thousands of engaged fans. Our tournament attracts passionate 7v7 players, coaches, and sports enthusiasts who value quality, performance, and excellence! The perfect audience for your brand.
               </p>
             </motion.div>
 
@@ -221,7 +179,7 @@ const Sponsors = () => {
                 Align With Excellence
               </h3>
               <p className="text-body-sm text-gray-600">
-                Associate your brand with a premier tournament known for competitive excellence, professional organization, and community values. Sponsoring Galaxy23 positions your company alongside the best in flag football and demonstrates your commitment to supporting athletic achievement.
+                Associate your brand with a premier tournament known for competitive excellence, professional organization, and community values. Sponsoring Galaxy23 positions your company alongside the best in 7v7 and demonstrates your commitment to supporting athletic achievement.
               </p>
             </motion.div>
 
@@ -297,7 +255,7 @@ const Sponsors = () => {
             </h2>
             <p className="text-body text-gray-600 max-w-3xl mx-auto">
               Choose from our tiered sponsorship packages designed to maximize your brand exposure 
-              and connect you with our passionate flag football community.
+              and connect you with our passionate 7v7 community.
             </p>
           </motion.div>
 
@@ -357,8 +315,7 @@ const Sponsors = () => {
               Ready to Partner With Us?
             </h2>
             <p className="text-body text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join the Galaxy23 family and connect with thousands of passionate flag football 
-              players, coaches, and fans. Let's create something amazing together.
+              Join the Galaxy23 family and connect with thousands of passionate sports players, coaches, and fans. Let's create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button 

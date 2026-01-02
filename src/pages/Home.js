@@ -136,15 +136,15 @@ const Home = () => {
                     </div>
                   ) : (
                     <>
-                      <div className="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="heading-md text-gray-900 mb-4">
-                        {feature.title}
-                      </h3>
-                      <p className="text-body-sm text-gray-600">
-                        {feature.description}
-                      </p>
+                  <div className="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="heading-md text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-body-sm text-gray-600">
+                    {feature.description}
+                  </p>
                     </>
                   )}
                 </motion.div>
@@ -155,7 +155,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-white" style={{ paddingTop: '96px', paddingBottom: '96px' }}>
+      <section className="bg-white" style={{ paddingTop: '64px', paddingBottom: '64px' }}>
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -176,6 +176,9 @@ const Home = () => {
               </Link>
               <Link to="/rules" className="btn-outline">
                 View Tournament Rules
+              </Link>
+              <Link to="/gear" className="btn-outline">
+                View Team Gear
               </Link>
             </div>
           </motion.div>

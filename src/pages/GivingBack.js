@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const WatchLive = () => {
+const GivingBack = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -36,14 +36,14 @@ const WatchLive = () => {
                 WebkitTextStroke: '1px rgba(255, 255, 255, 0.3)'
               }}
             >
-              Watch Live
+              Giving Back
             </h1>
             <p className="text-body max-w-3xl mx-auto" style={{
               color: '#8B4513',
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
               fontWeight: '700'
             }}>
-              Experience live broadcasts of each event
+              Galaxy23 Sports
             </p>
           </motion.div>
         </div>
@@ -52,11 +52,15 @@ const WatchLive = () => {
       {/* Content */}
       <div className="max-w-7xl mx-auto container-padding py-16">
         <div className="text-center">
-          <h1 className="text-black text-4xl font-bold mb-8">Live Event Coming Soon</h1>
+          <p className="text-body text-gray-600">
+            Content coming soon...
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default WatchLive; 
+export default GivingBack;
+
+

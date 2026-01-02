@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Trophy, Users, Calendar, Heart, Eye, Info, ShoppingBag, Shield, CalendarDays } from 'lucide-react';
+import { Menu, X, Users, Calendar, Heart, Eye, Info, ShoppingBag, Shield, CalendarDays, Gift } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,15 +17,16 @@ const Navbar = () => {
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '/', icon: Trophy },
+    { name: 'Home', href: '/', icon: null }, // Icon removed
     { name: 'Register', href: '/register', icon: Users },
-    { name: 'Events', href: '/events', icon: CalendarDays },
-    { name: 'Schedule', href: '/schedule', icon: Calendar },
+    // { name: 'Events', href: '/events', icon: CalendarDays }, // Hidden - uncomment to restore
+    // { name: 'Schedule', href: '/schedule', icon: Calendar }, // Hidden - uncomment to restore
     { name: 'Watch Live', href: '/watch', icon: Eye },
     { name: 'Team Gear', href: '/gear', icon: ShoppingBag },
     { name: 'Sponsors', href: '/sponsors', icon: Heart },
     { name: 'Rules', href: '/rules', icon: Shield },
     { name: 'About', href: '/about', icon: Info },
+    { name: 'Giving Back', href: '/giving-back', icon: Gift },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -37,13 +38,10 @@ const Navbar = () => {
         : 'bg-black'
     }`}>
       <div className="max-w-7xl mx-auto container-padding">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-start items-center h-16 space-x-4"> {/* Changed justify-between to justify-start and added space-x-4 */}
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center group">
-              <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-                <Trophy className="w-6 h-6 text-white" />
-              </div>
-              <span className={`ml-3 text-xl font-bold font-display group-hover:text-primary-600 transition-colors duration-300 ${
+              <span className={`text-xl font-bold font-display group-hover:text-primary-600 transition-colors duration-300 ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
                 Galaxy23
@@ -69,7 +67,7 @@ const Navbar = () => {
                         : 'text-white hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  <Icon className="w-4 h-4 mr-2" />
+                  {Icon && <Icon className="w-4 h-4 mr-2" />} {/* Conditionally render icon */}
                   {item.name}
                 </Link>
               );
@@ -77,7 +75,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center">
+          <div className="lg:hidden flex items-center ml-auto"> {/* Added ml-auto to push to right */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-lg hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 ${
@@ -111,7 +109,7 @@ const Navbar = () => {
                       : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
                   }`}
                 >
-                  <Icon className="w-5 h-5 mr-3" />
+                  {Icon && <Icon className="w-5 h-5 mr-3" />} {/* Conditionally render icon */}
                   {item.name}
                 </Link>
               );

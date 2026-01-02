@@ -12,6 +12,7 @@ import Sponsors from './pages/Sponsors';
 import Rules from './pages/Rules';
 import About from './pages/About';
 import TeamGear from './pages/TeamGear';
+import GivingBack from './pages/GivingBack';
 import PaymentSuccess from './pages/PaymentSuccess';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/rules" element={<Rules />} />
             <Route path="/about" element={<About />} />
             <Route path="/gear" element={<TeamGear />} />
+            <Route path="/giving-back" element={<GivingBack />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
           </Routes>
         </main>

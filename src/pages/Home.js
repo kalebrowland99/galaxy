@@ -109,8 +109,15 @@ const Home = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className={`card-elevated group w-full border-4 border-black ${feature.image ? 'p-0 overflow-hidden' : ''}`}
+                  className={`group w-full rounded-2xl ${feature.image ? 'overflow-hidden' : ''}`}
+                  style={{
+                    padding: '4px',
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
+                    boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.08)',
+                    filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                  }}
                 >
+                  <div className={`card-elevated rounded-2xl ${feature.image ? 'p-0 overflow-hidden' : ''}`}>
                   {feature.image ? (
                     <div className="relative w-full aspect-video group-hover:scale-105 transition-transform duration-300">
                       <img
@@ -147,6 +154,7 @@ const Home = () => {
                   </p>
                     </>
                   )}
+                  </div>
                 </motion.div>
               );
             })}
@@ -171,14 +179,47 @@ const Home = () => {
               Register your team today and secure your spot in this elite competition!
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/register" className="btn-secondary">
-                Register Your Team
+              <Link 
+                to="/register" 
+                className="relative rounded-xl"
+                style={{
+                  padding: '4px',
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
+                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.08)',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                }}
+              >
+                <span className="block rounded-xl py-3 sm:py-4 px-6 sm:px-8 border-2 border-primary-600 text-white hover:bg-primary-600 hover:text-white font-semibold transition-all duration-300">
+                  Register Your Team
+                </span>
               </Link>
-              <Link to="/rules" className="btn-outline border-4 border-black">
-                View Tournament Rules
+              <Link 
+                to="/rules" 
+                className="relative rounded-xl"
+                style={{
+                  padding: '4px',
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
+                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.08)',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                }}
+              >
+                <span className="block rounded-xl py-3 sm:py-4 px-6 sm:px-8 border-2 border-primary-600 text-white hover:bg-primary-600 hover:text-white font-semibold transition-all duration-300">
+                  View Tournament Rules
+                </span>
               </Link>
-              <Link to="/gear" className="btn-outline border-4 border-black">
-                View Team Gear
+              <Link 
+                to="/gear" 
+                className="btn-outline relative rounded-xl"
+                style={{
+                  padding: '4px',
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
+                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.08)',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                }}
+              >
+                <span className="block rounded-xl py-3 sm:py-4 px-6 sm:px-8 border-2 border-primary-600 text-white hover:bg-primary-600 hover:text-white font-semibold transition-all duration-300">
+                  View Team Gear
+                </span>
               </Link>
             </div>
           </motion.div>
@@ -201,16 +242,24 @@ const Home = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="text-center border-4 border-black rounded-2xl p-6 bg-white/10 backdrop-blur-sm"
+                  className="text-center rounded-2xl"
+                  style={{
+                    padding: '4px',
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
+                    boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.05)',
+                    filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                  }}
                 >
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
-                    <Icon className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-5xl font-bold text-white mb-3">
-                    {stat.number}
-                  </div>
-                  <div className="text-blue-100 font-medium text-lg">
-                    {stat.label}
+                  <div className="rounded-2xl p-6 bg-white/10 backdrop-blur-sm">
+                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                      <Icon className="w-10 h-10 text-white" />
+                    </div>
+                    <div className="text-5xl font-bold text-white mb-3">
+                      {stat.number}
+                    </div>
+                    <div className="text-blue-100 font-medium text-lg">
+                      {stat.label}
+                    </div>
                   </div>
                 </motion.div>
               );

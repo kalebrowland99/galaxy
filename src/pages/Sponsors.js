@@ -328,7 +328,7 @@ const Sponsors = () => {
                 Contact Us Today
               </button>
               <button 
-                className="btn-outline bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary-600"
+                className="btn-outline"
                 onClick={() => {
                   // Download sponsorship kit (placeholder)
                   alert('Sponsorship kit download would be implemented here. For now, please contact us at sponsors@galaxy23.com');

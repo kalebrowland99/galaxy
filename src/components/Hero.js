@@ -90,28 +90,40 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="text-center lg:text-left">
             <motion.div
               variants={itemVariants}
-              className="mb-6 relative inline-block rounded-3xl overflow-hidden border-4 border-white"
+              className="mb-6 relative inline-block rounded-3xl overflow-hidden"
+              style={{
+                padding: '3px',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6))',
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.08)',
+                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))'
+              }}
             >
-              <img
-                src="/galaxy sports logo.JPG"
-                alt="Galaxy23 Sports"
-                className="h-auto rounded-3xl"
-                style={{
-                  maxHeight: '281px',
-                  objectFit: 'contain',
-                  display: 'block'
-                }}
-              />
+              <div className="rounded-3xl overflow-hidden bg-transparent">
+                <img
+                  src="/galaxy sports logo.JPG"
+                  alt="Galaxy23 Sports"
+                  className="h-auto rounded-3xl"
+                  style={{
+                    maxHeight: '281px',
+                    objectFit: 'contain',
+                    display: 'block'
+                  }}
+                />
+              </div>
             </motion.div>
 
             {/* Upcoming Event Box */}
             <motion.div
               variants={itemVariants}
-              className="mb-8 inline-block px-6 py-6 rounded-2xl shadow-lg w-full max-w-2xl border-4 border-white"
+              className="mb-8 inline-block rounded-2xl shadow-lg w-full max-w-2xl"
               style={{
-                backgroundColor: '#000000'
+                padding: '3px',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6))',
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.08)',
+                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15))'
               }}
             >
+              <div className="rounded-2xl px-6 py-6" style={{ backgroundColor: '#000000' }}>
               <p className="text-base md:text-lg lg:text-xl font-semibold text-white text-center mb-4">
                 Upcoming event: 7v7 Football Tournament End of April 2026 in Murfreesboro, TN.
               </p>
@@ -120,6 +132,7 @@ const Hero = () => {
                 showcase your skills, and battle for the championship trophy in the most
                 prestigious tournament of the year.
               </p>
+              </div>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -129,10 +142,18 @@ const Hero = () => {
             >
               <Link
                 to="/register"
-                className="btn-secondary inline-flex items-center justify-center group"
+                className="relative rounded-xl inline-block"
+                style={{
+                  padding: '4px',
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
+                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.08)',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                }}
               >
-                Register Your Team
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <span className="block rounded-xl py-3 sm:py-4 px-6 sm:px-8 border-2 border-primary-600 text-white hover:bg-primary-600 hover:text-white font-semibold transition-all duration-300 inline-flex items-center justify-center group">
+                  Register Your Team
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
               </Link>
             </motion.div>
           </motion.div>
@@ -143,7 +164,16 @@ const Hero = () => {
             className="relative"
           >
             <Link to="/register" className="block">
-              <div className="relative bg-gray-50 rounded-3xl p-6 sm:p-10 border-4 border-black shadow-2xl hover:shadow-3xl transition-shadow duration-300 cursor-pointer">
+              <div 
+                className="relative rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 cursor-pointer"
+                style={{
+                  padding: '3px',
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))',
+                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.15), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15), 0 10px 24px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.08)',
+                  filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15))'
+                }}
+              >
+                <div className="relative bg-gray-50 rounded-3xl p-6 sm:p-10">
                 <div className="text-center mb-8">
                   <motion.h3
                     initial={{ opacity: 0, y: 10 }}
@@ -180,7 +210,7 @@ const Hero = () => {
                     <p className="text-lg sm:text-2xl font-semibold">Galaxy23 7v7 Tournament</p>
                   </div>
                 </div>
-
+                </div>
               </div>
             </Link>
           </motion.div>

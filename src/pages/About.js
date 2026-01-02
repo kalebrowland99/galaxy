@@ -263,7 +263,7 @@ const About = () => {
                 Register Your Team
               </Link>
               <button
-                className="btn-outline bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary-600"
+                className="btn-outline"
                 onClick={() => {
                   // Open email client with contact form
                   window.location.href = 'mailto:contact@galaxy23.com?subject=General Inquiry';

@@ -37,7 +37,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden py-12">
+    <div className="relative min-h-screen flex items-start justify-center overflow-hidden pt-8 pb-12">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -79,7 +79,7 @@ const Hero = () => {
       </div>
 
 
-      <div className="relative max-w-7xl mx-auto container-padding py-16 lg:py-24" style={{ zIndex: 2 }}>
+      <div className="relative max-w-7xl mx-auto container-padding pt-8 lg:pt-12 pb-8" style={{ zIndex: 2 }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -90,7 +90,7 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="text-center lg:text-left">
             <motion.div
               variants={itemVariants}
-              className="mb-8 relative inline-block rounded-2xl overflow-hidden w-full max-w-md"
+              className="mb-6 relative inline-block rounded-2xl overflow-hidden w-full max-w-md"
             >
               <img
                 src="/galaxy sports logo.JPG"
@@ -106,7 +106,7 @@ const Hero = () => {
             {/* Upcoming Event Box */}
             <motion.div
               variants={itemVariants}
-              className="mb-8 inline-block px-6 py-4 rounded-2xl shadow-lg w-full max-w-2xl"
+              className="mb-6 inline-block px-6 py-4 rounded-2xl shadow-lg w-full max-w-2xl"
               style={{
                 backgroundColor: '#000000'
               }}
@@ -118,7 +118,7 @@ const Hero = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg lg:text-xl text-white max-w-2xl mb-10 leading-relaxed font-semibold drop-shadow-lg"
+              className="text-base md:text-lg lg:text-xl text-white max-w-2xl mb-8 leading-relaxed font-semibold drop-shadow-lg"
             >
               Join the ultimate 7v7 experience! Compete with the best teams,
               showcase your skills, and battle for the championship trophy in the most

@@ -390,10 +390,10 @@ const Rules = () => {
                 viewport={{ once: true }}
                 className="card-elevated"
               >
-                <h3 className="heading-md text-gray-900 mb-4">
+                <h3 className="heading-md text-gray-900 mb-4 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                   {rule.title}
                 </h3>
-                <p className="text-body-sm text-gray-600">
+                <p className="text-body-sm text-gray-600" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>
                   {rule.description}
                 </p>
               </motion.div>

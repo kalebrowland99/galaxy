@@ -78,14 +78,14 @@ const Home = () => {
       <Hero />
       
       {/* Features Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto container-padding">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="heading-lg text-gray-900 mb-6">
               Why Choose Galaxy23?
@@ -155,7 +155,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-white" style={{ paddingTop: '64px', paddingBottom: '64px' }}>
+      <section className="bg-white" style={{ paddingTop: '48px', paddingBottom: '48px' }}>
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -186,7 +186,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-primary-600">
+      <section className="py-12 lg:py-16 bg-primary-600">
         <div className="max-w-7xl mx-auto container-padding">
           <motion.div
             variants={containerVariants}

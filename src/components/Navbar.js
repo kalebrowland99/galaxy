@@ -26,7 +26,7 @@ const Navbar = () => {
     { name: 'Sponsors', href: '/sponsors', icon: Heart },
     { name: 'Rules', href: '/rules', icon: Shield },
     { name: 'About', href: '/about', icon: Info },
-    { name: 'Giving Back', href: '/giving-back', icon: Gift },
+    // { name: 'Giving Back', href: '/giving-back', icon: Gift }, // Hidden - uncomment to restore
   ];
 
   const isActive = (path) => location.pathname === path;

@@ -87,7 +87,7 @@ const Schedule = () => {
             className="text-center"
           >
             <h1 
-              className="heading-xl mb-6 font-bold"
+              className="heading-xl mb-6 font-bold px-4"
               style={{
                 color: '#8B4513',
                 textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
@@ -102,7 +102,7 @@ const Schedule = () => {
             >
               Tournament Schedule
             </h1>
-            <p className="text-body max-w-3xl mx-auto" style={{
+            <p className="text-body max-w-3xl mx-auto px-4" style={{
               color: '#8B4513',
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
               fontWeight: '700'
@@ -121,7 +121,7 @@ const Schedule = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8"
           >
             {games.map((game, index) => (
               <motion.div
@@ -131,34 +131,34 @@ const Schedule = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="card-elevated group cursor-pointer"
               >
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-4 gap-2 flex-wrap">
                   <div className="flex items-center text-primary-600">
-                    <Clock className="w-4 h-4 mr-2" />
-                    <span className="font-semibold">{game.time}</span>
+                    <Clock className="w-4 h-4 mr-2 flex-shrink-0" />
+                    <span className="font-semibold text-sm sm:text-base">{game.time}</span>
                   </div>
-                  <div className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">
+                  <div className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs sm:text-sm font-medium">
                     {game.division.charAt(0).toUpperCase() + game.division.slice(1)}
                   </div>
                 </div>
                 
                 <div className="text-center mb-4">
-                  <div className="text-lg font-semibold text-gray-900 mb-2">
+                  <div className="text-base sm:text-lg font-semibold text-gray-900 mb-2 break-words">
                     {game.team1}
                   </div>
-                  <div className="text-2xl font-bold text-primary-600 mb-2">VS</div>
-                  <div className="text-lg font-semibold text-gray-900">
+                  <div className="text-xl sm:text-2xl font-bold text-primary-600 mb-2">VS</div>
+                  <div className="text-base sm:text-lg font-semibold text-gray-900 break-words">
                     {game.team2}
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between text-sm text-gray-600">
+                <div className="flex items-center justify-between text-xs sm:text-sm text-gray-600 gap-2 flex-wrap">
                   <div className="flex items-center">
-                    <MapPin className="w-4 h-4 mr-1" />
-                    {game.field}
+                    <MapPin className="w-4 h-4 mr-1 flex-shrink-0" />
+                    <span className="break-words">{game.field}</span>
                   </div>
                   <div className="flex items-center">
-                    <Users className="w-4 h-4 mr-1" />
-                    {game.status}
+                    <Users className="w-4 h-4 mr-1 flex-shrink-0" />
+                    <span className="break-words">{game.status}</span>
                   </div>
                 </div>
               </motion.div>

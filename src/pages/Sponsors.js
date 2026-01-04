@@ -84,7 +84,7 @@ const Sponsors = () => {
             className="text-center"
           >
             <h1 
-              className="heading-xl mb-6 font-bold"
+              className="heading-xl mb-6 font-bold px-4"
               style={{
                 color: '#8B4513',
                 textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
@@ -99,7 +99,7 @@ const Sponsors = () => {
             >
               Sponsors & Partners
             </h1>
-            <p className="text-body max-w-3xl mx-auto" style={{
+            <p className="text-body max-w-3xl mx-auto px-4" style={{
               color: '#8B4513',
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
               fontWeight: '700'
@@ -128,21 +128,21 @@ const Sponsors = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="card-elevated p-8"
+              className="card-elevated p-4 sm:p-6 lg:p-8"
             >
               <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="heading-md text-gray-900 mb-4">
+              <h3 className="heading-md text-gray-900 mb-4 break-words">
                 Reach Your Target Audience
               </h3>
-              <p className="text-body-sm text-gray-600">
+              <p className="text-body-sm text-gray-600 break-words">
                 Hundreds of athletes, and thousands of engaged fans. Our tournament attracts passionate 7v7 players, coaches, and sports enthusiasts who value quality, performance, and excellence! The perfect audience for your brand.
               </p>
             </motion.div>
@@ -152,15 +152,15 @@ const Sponsors = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="card-elevated p-8"
+              className="card-elevated p-4 sm:p-6 lg:p-8"
             >
               <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
                 <Star className="w-8 h-8 text-white" />
               </div>
-              <h3 className="heading-md text-gray-900 mb-4">
+              <h3 className="heading-md text-gray-900 mb-4 break-words">
                 Maximum Brand Exposure
               </h3>
-              <p className="text-body-sm text-gray-600">
+              <p className="text-body-sm text-gray-600 break-words">
                 Your brand will be featured across all tournament materials, digital platforms, social media campaigns, and live event coverage. With multi-day exposure and comprehensive marketing support, your sponsorship investment delivers measurable visibility and impact.
               </p>
             </motion.div>
@@ -170,15 +170,15 @@ const Sponsors = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="card-elevated p-8"
+              className="card-elevated p-4 sm:p-6 lg:p-8"
             >
               <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="heading-md text-gray-900 mb-4">
+              <h3 className="heading-md text-gray-900 mb-4 break-words">
                 Align With Excellence
               </h3>
-              <p className="text-body-sm text-gray-600">
+              <p className="text-body-sm text-gray-600 break-words">
                 Associate your brand with a premier tournament known for competitive excellence, professional organization, and community values. Sponsoring Galaxy23 positions your company alongside the best in 7v7 and demonstrates your commitment to supporting athletic achievement.
               </p>
             </motion.div>
@@ -188,15 +188,15 @@ const Sponsors = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="card-elevated p-8"
+              className="card-elevated p-4 sm:p-6 lg:p-8"
             >
               <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
                 <DollarSign className="w-8 h-8 text-white" />
               </div>
-              <h3 className="heading-md text-gray-900 mb-4">
+              <h3 className="heading-md text-gray-900 mb-4 break-words">
                 Measurable ROI
               </h3>
-              <p className="text-body-sm text-gray-600">
+              <p className="text-body-sm text-gray-600 break-words">
                 Receive detailed analytics on brand impressions, social media engagement, and audience reach. Our comprehensive reporting ensures you can track the value and impact of your sponsorship investment with clear, actionable metrics.
               </p>
             </motion.div>
@@ -206,15 +206,15 @@ const Sponsors = () => {
                 whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-              className="card-elevated p-8"
+              className="card-elevated p-4 sm:p-6 lg:p-8"
               >
               <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-white" />
                 </div>
-              <h3 className="heading-md text-gray-900 mb-4">
+              <h3 className="heading-md text-gray-900 mb-4 break-words">
                 Exclusive Access & Experiences
                 </h3>
-              <p className="text-body-sm text-gray-600">
+              <p className="text-body-sm text-gray-600 break-words">
                 Enjoy VIP access to all tournament events, exclusive networking opportunities with team leaders and coaches, and the chance to present awards at ceremonies. Create meaningful connections and memorable experiences for your team and clients.
               </p>
             </motion.div>
@@ -224,15 +224,15 @@ const Sponsors = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="card-elevated p-8"
+              className="card-elevated p-4 sm:p-6 lg:p-8"
             >
               <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="heading-md text-gray-900 mb-4">
+              <h3 className="heading-md text-gray-900 mb-4 break-words">
                 Custom Partnership Opportunities
               </h3>
-                <p className="text-body-sm text-gray-600">
+                <p className="text-body-sm text-gray-600 break-words">
                 We work with each sponsor to create tailored partnership packages that align with your marketing goals. From product placement and sampling to custom activations and co-branded content, we'll design a sponsorship that delivers maximum value for your brand.
                 </p>
               </motion.div>
@@ -259,7 +259,7 @@ const Sponsors = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {sponsorshipTiers.map((tier, index) => (
               <motion.div
                 key={index}
@@ -269,26 +269,26 @@ const Sponsors = () => {
                 viewport={{ once: true }}
                 className="card-elevated relative overflow-hidden"
               >
-                <div className={`bg-gradient-to-r ${tier.color} p-6 rounded-t-lg -m-6 mb-6`}>
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                <div className={`bg-gradient-to-r ${tier.color} p-4 sm:p-6 rounded-t-lg -m-4 sm:-m-6 mb-4 sm:mb-6`}>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 break-words">
                     {tier.name}
                   </h3>
-                  <p className="text-white/80 text-lg">
+                  <p className="text-white/80 text-base sm:text-lg break-words">
                     {tier.price}
                   </p>
                 </div>
                 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {tier.benefits.map((benefit, benefitIndex) => (
                     <div key={benefitIndex} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{benefit}</span>
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm text-gray-700 break-words">{benefit}</span>
                     </div>
                   ))}
                 </div>
                 
                 <button 
-                  className="w-full mt-8 btn-primary"
+                  className="w-full mt-6 sm:mt-8 btn-primary text-sm sm:text-base"
                   onClick={() => {
                     // Open email client with sponsorship inquiry
                     window.location.href = 'mailto:sponsors@galaxy23.com?subject=Sponsorship Inquiry - ' + tier.name + ' Tier';

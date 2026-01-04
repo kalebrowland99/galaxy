@@ -23,7 +23,7 @@ const WatchLive = () => {
             className="text-center"
           >
             <h1 
-              className="heading-xl mb-6 font-bold"
+              className="heading-xl mb-6 font-bold px-4"
               style={{
                 color: '#8B4513',
                 textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
@@ -38,7 +38,7 @@ const WatchLive = () => {
             >
               Watch Live
             </h1>
-            <p className="text-body max-w-3xl mx-auto" style={{
+            <p className="text-body max-w-3xl mx-auto px-4" style={{
               color: '#8B4513',
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
               fontWeight: '700'

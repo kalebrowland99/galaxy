@@ -69,7 +69,7 @@ const About = () => {
             className="text-center"
           >
             <h1
-              className="heading-xl mb-6 font-bold"
+              className="heading-xl mb-6 font-bold px-4"
               style={{
                 color: '#8B4513',
                 textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
@@ -84,7 +84,7 @@ const About = () => {
             >
               About Galaxy23
             </h1>
-            <p className="text-body max-w-3xl mx-auto" style={{
+            <p className="text-body max-w-3xl mx-auto px-4" style={{
               color: '#8B4513',
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
               fontWeight: '700'
@@ -159,7 +159,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
@@ -174,10 +174,10 @@ const About = () => {
                   <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="heading-md text-gray-900 mb-4">
+                  <h3 className="heading-md text-gray-900 mb-4 break-words">
                     {value.title}
                   </h3>
-                  <p className="text-body-sm text-gray-600">
+                  <p className="text-body-sm text-gray-600 break-words">
                     {value.description}
                   </p>
                 </motion.div>
@@ -205,7 +205,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -231,13 +231,13 @@ const About = () => {
                     <Users className="w-6 h-6 text-white" />
                   </div>
                 )}
-                <h3 className="heading-md text-gray-900 mb-2">
+                <h3 className="heading-md text-gray-900 mb-2 break-words">
                   {member.name}
                 </h3>
-                <p className="text-primary-600 font-semibold mb-4">
+                <p className="text-primary-600 font-semibold mb-4 text-sm sm:text-base break-words">
                   {member.role}
                 </p>
-                <p className="text-body-sm text-gray-600">
+                <p className="text-body-sm text-gray-600 break-words">
                   {member.bio}
                 </p>
               </motion.div>

@@ -185,7 +185,7 @@ const Rules = () => {
             className="text-center"
           >
             <h1 
-              className="heading-xl mb-6 font-bold"
+              className="heading-xl mb-6 font-bold px-4"
               style={{
                 color: '#8B4513',
                 textShadow: '3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
@@ -200,7 +200,7 @@ const Rules = () => {
             >
               Rules, Safety & Policies
             </h1>
-            <p className="text-body max-w-3xl mx-auto" style={{
+            <p className="text-body max-w-3xl mx-auto px-4" style={{
               color: '#8B4513',
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(255, 255, 255, 0.5)',
               fontWeight: '700'
@@ -229,7 +229,7 @@ const Rules = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {generalRules.map((section, index) => (
               <motion.div
                 key={index}
@@ -239,15 +239,15 @@ const Rules = () => {
                 viewport={{ once: true }}
                 className="card-elevated"
               >
-                <h3 className="heading-md text-gray-900 mb-6 flex items-center">
-                  <Clock className="w-5 h-5 mr-2 text-primary-600" />
+                <h3 className="heading-md text-gray-900 mb-6 flex items-center break-words">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary-600 flex-shrink-0" />
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
                   {section.rules.map((rule, ruleIndex) => (
                     <li key={ruleIndex} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-body-sm text-gray-700">{rule}</span>
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-body-sm text-gray-700 break-words">{rule}</span>
                     </li>
                   ))}
                 </ul>
@@ -275,7 +275,7 @@ const Rules = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {safetyGuidelines.map((guideline, index) => {
               const Icon = guideline.icon;
               return (
@@ -290,7 +290,7 @@ const Rules = () => {
                   <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="heading-md text-gray-900 mb-4" style={{
+                  <h3 className="heading-md text-gray-900 mb-4 break-words" style={{
                     wordBreak: 'break-word',
                     lineHeight: '1.3',
                     fontSize: guideline.title === 'Sportsman-ship' ? 'clamp(1rem, 2vw, 1.25rem)' : undefined,
@@ -298,7 +298,7 @@ const Rules = () => {
                   }}>
                     {guideline.title}
                   </h3>
-                  <p className="text-body-sm text-gray-600">
+                  <p className="text-body-sm text-gray-600 break-words">
                     {guideline.description}
                   </p>
                 </motion.div>
@@ -326,7 +326,7 @@ const Rules = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {conductPolicies.map((policy, index) => (
               <motion.div
                 key={index}
@@ -336,13 +336,13 @@ const Rules = () => {
                 viewport={{ once: true }}
                 className="card-elevated"
               >
-                <h3 className="heading-md text-gray-900 mb-6 flex items-center">
+                <h3 className="heading-md text-gray-900 mb-6 flex items-center break-words">
                   {index === 1 ? (
-                    <Ban className="w-5 h-5 mr-2 text-red-500" />
+                    <Ban className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-red-500 flex-shrink-0" />
                   ) : index === 2 ? (
-                    <AlertTriangle className="w-5 h-5 mr-2 text-yellow-500" />
+                    <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-500 flex-shrink-0" />
                   ) : (
-                    <Shield className="w-5 h-5 mr-2 text-primary-600" />
+                    <Shield className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary-600 flex-shrink-0" />
                   )}
                   {policy.title}
                 </h3>
@@ -352,7 +352,7 @@ const Rules = () => {
                       <div className={`w-2 h-2 rounded-full mr-3 mt-2 flex-shrink-0 ${
                         index === 1 ? 'bg-red-500' : index === 2 ? 'bg-yellow-500' : 'bg-primary-600'
                       }`} />
-                      <span className="text-body-sm text-gray-700">{item}</span>
+                      <span className="text-body-sm text-gray-700 break-words">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -380,7 +380,7 @@ const Rules = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {eligibilityRules.map((rule, index) => (
               <motion.div
                 key={index}
@@ -391,7 +391,7 @@ const Rules = () => {
                 className="card-elevated"
               >
                 <h3 
-                  className="text-gray-900 mb-4 font-bold leading-tight"
+                  className="text-gray-900 mb-4 font-bold leading-tight break-words"
                   style={{ 
                     fontSize: 'clamp(1.125rem, 2vw, 1.5rem)',
                     wordBreak: 'normal', 
@@ -402,7 +402,7 @@ const Rules = () => {
                   {rule.title}
                 </h3>
                 <p 
-                  className="text-gray-600 leading-relaxed"
+                  className="text-gray-600 leading-relaxed break-words"
                   style={{ 
                     fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                     wordBreak: 'break-word', 

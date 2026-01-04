@@ -130,17 +130,6 @@ const Hero = () => {
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
-                <Link
-                  to="/rules"
-                  className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg text-white transition-all duration-300 border-2 border-white/20 hover:border-white/40 backdrop-blur-sm w-full sm:w-auto"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.05)'
-                  }}
-                >
-                  View Details
-                </Link>
-              </motion.div>
             </motion.div>
           </motion.div>
 

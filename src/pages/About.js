@@ -38,7 +38,7 @@ const About = () => {
       name: 'Evan Smith',
       role: 'Operations Manager',
       bio: 'Evan has 19+ years working big live video production\'s in sports, music and corperate events. He is also a  youth community advocate',
-      image: '/evan new galaxy.jpeg'
+      image: '/evan new galaxy.JPEG'
     },
     {
       name: 'Jacob Schneider',

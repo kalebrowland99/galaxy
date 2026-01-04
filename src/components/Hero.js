@@ -1,11 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Volume2, VolumeX } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef(null);
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -146,7 +144,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Video Card */}
+          {/* Logo Card */}
           <motion.div
             variants={itemVariants}
             className="relative"
@@ -158,43 +156,15 @@ const Hero = () => {
               }}
             >
               <div className="p-6 sm:p-8">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Watch Tournament Highlights
-                  </h3>
-                  <p className="text-gray-400">
-                    See what makes Galaxy23 special
-                  </p>
-                </div>
-
-                <div className="relative rounded-xl overflow-hidden aspect-[16/9] bg-black">
-                  <video
-                    ref={videoRef}
-                    src="/animated logo video.MOV"
-                    autoPlay
-                    loop
-                    playsInline
-                    muted={isMuted}
-                    className="w-full h-full object-cover"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                  {/* Mute/Unmute Button */}
-                  <button
-                    onClick={() => setIsMuted(!isMuted)}
-                    className="absolute bottom-4 right-4 p-3 rounded-lg backdrop-blur-md transition-all duration-300 hover:scale-105"
+                <div className="relative rounded-xl overflow-hidden flex items-center justify-center">
+                  <img
+                    src="/galaxy sports logo.JPG"
+                    alt="Galaxy23 Sports Logo"
+                    className="w-full h-auto object-contain"
                     style={{
-                      background: 'rgba(0, 0, 0, 0.7)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)'
+                      maxHeight: '400px'
                     }}
-                    aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-                  >
-                    {isMuted ? (
-                      <VolumeX className="w-5 h-5 text-white" />
-                    ) : (
-                      <Volume2 className="w-5 h-5 text-white" />
-                    )}
-                  </button>
+                  />
                 </div>
               </div>
             </div>

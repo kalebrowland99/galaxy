@@ -160,7 +160,7 @@ const Rules = () => {
     },
     {
       title: 'Equipment',
-      description: 'All players must wear approved flag belts and appropriate athletic footwear. Cleats are allowed but must be non-metal.'
+      description: 'All players must wear approved flag belts and appropriate athletic footwear. Cleats are allowed but must be nonmetal.'
     }
   ];
 
@@ -390,10 +390,26 @@ const Rules = () => {
                 viewport={{ once: true }}
                 className="card-elevated"
               >
-                <h3 className="heading-md text-gray-900 mb-4 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                <h3 
+                  className="text-gray-900 mb-4 font-bold leading-tight"
+                  style={{ 
+                    fontSize: 'clamp(1.125rem, 2vw, 1.5rem)',
+                    wordBreak: 'normal', 
+                    overflowWrap: 'break-word',
+                    hyphens: 'none'
+                  }}
+                >
                   {rule.title}
                 </h3>
-                <p className="text-body-sm text-gray-600" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>
+                <p 
+                  className="text-gray-600 leading-relaxed"
+                  style={{ 
+                    fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                    wordBreak: 'break-word', 
+                    overflowWrap: 'break-word', 
+                    hyphens: 'auto' 
+                  }}
+                >
                   {rule.description}
                 </p>
               </motion.div>

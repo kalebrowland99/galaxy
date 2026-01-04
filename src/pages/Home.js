@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import { motion } from 'framer-motion';
 import { 
-  Trophy, Users, Calendar, MapPin, 
-  Award, Shield, Target 
+  Trophy, Users, MapPin 
 } from 'lucide-react';
 
 // Football Icon Component
@@ -44,12 +43,6 @@ const Home = () => {
     }
   ];
 
-  const stats = [
-    { number: '50', label: 'Teams', icon: Users },
-    { number: '7v7', label: 'Format', icon: Shield },
-    { number: 'Elite', label: 'Competition', icon: Target }
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -78,21 +71,38 @@ const Home = () => {
       <Hero />
       
       {/* Features Section */}
-      <section className="py-12 lg:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto container-padding">
+      <section className="h-screen flex items-center relative overflow-hidden" style={{
+        background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)'
+      }}>
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto container-padding relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-12 lg:mb-16"
           >
-            <h2 className="heading-lg text-gray-900 mb-6">
+            <motion.h2 
+              className="text-4xl md:text-5xl lg:text-6xl font-black mb-6"
+              style={{
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #60a5fa 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                textShadow: '0 0 30px rgba(102, 126, 234, 0.5)'
+              }}
+            >
               Why Choose Galaxy23?
-            </h2>
-            <p className="text-body text-gray-600 max-w-3xl mx-auto">
-              Experience the ultimate 7v7 football tournament with professional organization, 
-              competitive play, and unforgettable memories that will last a lifetime.
+            </motion.h2>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-medium">
+              Experience the premier 7v7 football tournament. Compete against elite teams, 
+              develop your skills, and create lasting memories. Where excellence meets opportunity.
             </p>
           </motion.div>
 
@@ -109,52 +119,58 @@ const Home = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className={`group w-full rounded-2xl ${feature.image ? 'overflow-hidden' : ''}`}
+                  whileHover={{ y: -8 }}
+                  className="group w-full rounded-2xl overflow-hidden"
                   style={{
-                    padding: '4px',
-                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
-                    boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.08)',
-                    filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                    background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.4)',
                   }}
                 >
-                  <div className={`card-elevated rounded-2xl ${feature.image ? 'p-0 overflow-hidden' : ''}`}>
                   {feature.image ? (
-                    <div className="relative w-full aspect-video group-hover:scale-105 transition-transform duration-300">
-                      <img
-                        src={feature.image}
-                        alt={feature.title}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          console.error('Image failed to load:', e.target.src);
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-white/70 flex flex-col justify-end p-4 pb-6">
-                        <p className="text-sm md:text-base font-extrabold leading-tight break-words" style={{ 
-                          color: '#000000',
-                          textShadow: '2px 2px 4px rgba(255, 255, 255, 1), 0 0 8px rgba(255, 255, 255, 0.8)',
-                          wordWrap: 'break-word',
-                          overflowWrap: 'break-word',
-                          fontWeight: '900',
-                          fontSize: 'clamp(0.875rem, 2vw, 1rem)'
-                        }}>
+                    <>
+                      {/* Image Section */}
+                      <div className="relative w-full aspect-video overflow-hidden">
+                        <img
+                          src={feature.image}
+                          alt={feature.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          onError={(e) => {
+                            console.error('Image failed to load:', e.target.src);
+                          }}
+                        />
+                        {/* Subtle gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                      </div>
+                      
+                      {/* Content Section - Separate from image */}
+                      <div className="p-6 space-y-3">
+                        <h3 className="text-xl font-bold text-white">
+                          {feature.title}
+                        </h3>
+                        <p className="text-sm text-gray-300 leading-relaxed">
                           {feature.description}
                         </p>
                       </div>
-                    </div>
-                  ) : (
-                    <>
-                  <div className="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="heading-md text-gray-900 mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-body-sm text-gray-600">
-                    {feature.description}
-                  </p>
                     </>
+                  ) : (
+                    <div className="p-6">
+                      <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-4"
+                        style={{
+                          background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+                        }}
+                      >
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-gray-300 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   )}
-                  </div>
                 </motion.div>
               );
             })}
@@ -163,107 +179,78 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-white" style={{ paddingTop: '48px', paddingBottom: '48px' }}>
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+      <section className="h-screen flex items-center relative overflow-hidden" style={{ 
+        background: 'linear-gradient(180deg, #16213e 0%, #0f172a 100%)'
+      }}>
+        {/* Animated gradient orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="heading-lg text-gray-900 mb-8">
-              Ready to Compete?
-            </h2>
-            <p className="text-body text-gray-600 mb-12 max-w-2xl mx-auto">
-              Don't miss your chance to be part of the most exciting 7v7 football tournament of the year. 
-              Register your team today and secure your spot in this elite competition!
+            <motion.h2 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            >
+              <span className="block text-white font-light">Ready to</span>
+              <span className="block font-black" style={{
+                background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>
+                Compete?
+              </span>
+            </motion.h2>
+            <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Secure your team's place in the premier 7v7 football tournament. 
+              Limited spots available for elite competition. Registration is now open.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link 
-                to="/register" 
-                className="relative rounded-xl"
-                style={{
-                  padding: '4px',
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
-                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.08)',
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
-                }}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <span className="block rounded-xl py-3 sm:py-4 px-6 sm:px-8 border-2 border-primary-600 text-white hover:bg-primary-600 hover:text-white font-semibold transition-all duration-300">
-                  Register Your Team
-                </span>
-              </Link>
-              <Link 
-                to="/rules" 
-                className="relative rounded-xl"
-                style={{
-                  padding: '4px',
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
-                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.08)',
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
-                }}
-              >
-                <span className="block rounded-xl py-3 sm:py-4 px-6 sm:px-8 border-2 border-primary-600 text-white hover:bg-primary-600 hover:text-white font-semibold transition-all duration-300">
-                  View Tournament Rules
-                </span>
-              </Link>
-              <Link 
-                to="/gear" 
-                className="btn-outline relative rounded-xl"
-                style={{
-                  padding: '4px',
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
-                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.08)',
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
-                }}
-              >
-                <span className="block rounded-xl py-3 sm:py-4 px-6 sm:px-8 border-2 border-primary-600 text-white hover:bg-primary-600 hover:text-white font-semibold transition-all duration-300">
-                  View Team Gear
-                </span>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-12 lg:py-16 bg-primary-600">
-        <div className="max-w-7xl mx-auto container-padding">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-3 gap-12 justify-items-center max-w-5xl mx-auto"
-          >
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="text-center rounded-2xl"
+                <Link 
+                  to="/register" 
+                  className="relative inline-block rounded-2xl overflow-hidden group"
                   style={{
-                    padding: '4px',
-                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
-                    boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.05)',
-                    filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #60a5fa 100%)',
+                    padding: '3px',
+                    boxShadow: '0 10px 40px rgba(102, 126, 234, 0.4), 0 0 20px rgba(96, 165, 250, 0.3)'
                   }}
                 >
-                  <div className="rounded-2xl p-6 bg-white/10 backdrop-blur-sm">
-                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
-                      <Icon className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="text-5xl font-bold text-white mb-3">
-                      {stat.number}
-                    </div>
-                    <div className="text-blue-100 font-medium text-lg">
-                      {stat.label}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  <span className="block rounded-2xl py-4 px-8 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-black text-lg transition-all duration-300 group-hover:from-purple-500 group-hover:to-blue-400">
+                    Register Your Team Now
+                  </span>
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link 
+                  to="/rules" 
+                  className="relative inline-block rounded-2xl overflow-hidden group"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))',
+                    backdropFilter: 'blur(10px)',
+                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    padding: '3px',
+                  }}
+                >
+                  <span className="block rounded-2xl py-4 px-8 bg-white/10 backdrop-blur-sm text-white font-bold text-lg transition-all duration-300 group-hover:bg-white/20">
+                    View Tournament Rules 📋
+                  </span>
+                </Link>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>

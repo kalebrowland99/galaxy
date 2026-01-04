@@ -37,13 +37,6 @@ const Register = () => {
             >
               Team Registration
             </h1>
-            <p className="text-body max-w-3xl mx-auto" style={{
-              color: '#8B4513',
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.8)',
-              fontWeight: '600'
-            }}>
-              Fill out the form below to register your team for the Galaxy23 tournament. $1,000 per team with a multiple team discount. Secure your spot now with a $250 non-refundable deposit.
-            </p>
           </motion.div>
         </div>
       </div>
@@ -60,8 +53,12 @@ const Register = () => {
             <h2 className="heading-lg text-gray-900 mb-4">
               Complete Your Registration
             </h2>
-            <p className="text-body text-gray-600">
-              Fill out the form below to register your team for the Galaxy23 tournament. $1,000 per team with a multiple team discount. Secure your spot with a $250 non-refundable deposit.
+            <p className="text-body text-gray-600" style={{
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word',
+              hyphens: 'auto'
+            }}>
+              Fill out the form below to register your team for the Galaxy23 tournament. $1,000 per team with a multiple team discount. Secure your spot now with a $250 non-refundable deposit.
             </p>
           </motion.div>
           

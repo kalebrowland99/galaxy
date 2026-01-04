@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Calendar, Gift } from 'lucide-react'; // Gift is used for Giving Back
+import { ArrowRight, Volume2, VolumeX } from 'lucide-react';
 
 const Hero = () => {
-  const [initialAnimation, setInitialAnimation] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setInitialAnimation(false);
-    }, 1000); // Duration of initial animation
-    return () => clearTimeout(timer);
-  }, []);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -37,45 +31,23 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-start justify-center overflow-hidden pt-8 pb-12">
-      {/* Background Image */}
-      <div className="absolute inset-0">
+    <div className="relative h-screen flex items-center justify-center overflow-hidden" style={{
+      background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)'
+    }}>
+      {/* Subtle animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      {/* Background Image - Subtle */}
+      <div className="absolute inset-0 opacity-20">
         <img
           src="/7v7.webp"
           alt="Football Field"
           className="w-full h-full object-cover"
         />
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-black opacity-50" />
-      </div>
-
-      {/* Football Field Background - Vertical */}
-      <div className="absolute inset-0 opacity-20" style={{ zIndex: 1 }}>
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 600 1200" preserveAspectRatio="none">
-          {/* Field Background - Green */}
-          <rect x="0" y="0" width="600" height="1200" fill="#2d5016" />
-
-          {/* End Zones - Purple (top and bottom) */}
-          <rect x="0" y="0" width="600" height="100" fill="#6a0dad" />
-          <rect x="0" y="1100" width="600" height="100" fill="#6a0dad" />
-
-          {/* Yard Lines - White (vertical lines) */}
-          {[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000].map((y) => (
-            <line key={y} x1="0" y1={y} x2="600" y2={y} stroke="white" strokeWidth="2" opacity="0.6" />
-          ))}
-
-          {/* Hash Marks (horizontal marks on sides) */}
-          {[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000].map((y) => (
-            <g key={`hash-${y}`}>
-              <line x1="200" y1={y} x2="220" y2={y} stroke="white" strokeWidth="1.5" opacity="0.5" />
-              <line x1="380" y1={y} x2="400" y2={y} stroke="white" strokeWidth="1.5" opacity="0.5" />
-            </g>
-          ))}
-
-          {/* Field Numbers (simplified) */}
-          <text x="300" y="150" fill="white" fontSize="60" opacity="0.3" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">50</text>
-          <text x="300" y="1050" fill="white" fontSize="60" opacity="0.3" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="bold">50</text>
-        </svg>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-900/90" />
       </div>
 
 
@@ -87,132 +59,145 @@ const Hero = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
         >
           {/* Content */}
-          <motion.div variants={itemVariants} className="text-center lg:text-left">
-            <motion.div
-              variants={itemVariants}
-              className="mb-6 relative inline-block rounded-3xl overflow-hidden"
-              style={{
-                padding: '3px',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6))',
-                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.08)',
-                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))'
-              }}
-            >
-              <div className="rounded-3xl overflow-hidden bg-transparent">
-                <img
-                  src="/galaxy sports logo.JPG"
-                  alt="Galaxy23 Sports"
-                  className="h-auto rounded-3xl"
-                  style={{
-                    maxHeight: '281px',
-                    objectFit: 'contain',
-                    display: 'block'
-                  }}
-                />
-              </div>
+          <motion.div variants={itemVariants} className="text-center lg:text-left space-y-8">
+            {/* Headline */}
+            <motion.div variants={itemVariants} className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+                Galaxy23
+                <span className="block mt-2" style={{
+                  background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>
+                  Sports
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 max-w-xl">
+                Join the premier student athlete 7v7 football competition. Where talent meets opportunity.
+              </p>
             </motion.div>
 
-            {/* Upcoming Event Box */}
+            {/* Event Details Card */}
             <motion.div
               variants={itemVariants}
-              className="mb-8 inline-block rounded-2xl shadow-lg w-full max-w-2xl"
-              style={{
-                padding: '3px',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6))',
-                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.08)',
-                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15))'
-              }}
+              className="inline-block w-full max-w-2xl"
             >
-              <div className="rounded-2xl px-6 py-6" style={{ backgroundColor: '#000000' }}>
-              <p className="text-base md:text-lg lg:text-xl font-semibold text-white text-center mb-4">
-                Upcoming event: 7v7 Football Tournament End of April 2026 in Murfreesboro, TN.
-              </p>
-              <p className="text-base md:text-lg lg:text-xl text-white text-center leading-relaxed font-semibold">
-                Join the ultimate 7v7 experience! Compete with the best teams,
-                showcase your skills, and battle for the championship trophy in the most
-                prestigious tournament of the year.
-              </p>
-              </div>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              variants={itemVariants}
-              className="flex justify-center lg:justify-start"
-            >
-              <Link
-                to="/register"
-                className="relative rounded-xl inline-block"
+              <div className="rounded-2xl p-6 backdrop-blur-xl border border-white/10"
                 style={{
-                  padding: '4px',
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9))',
-                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.08)',
-                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15))'
+                  background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
+                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <span className="block rounded-xl py-3 sm:py-4 px-6 sm:px-8 border-2 border-primary-600 text-white hover:bg-primary-600 hover:text-white font-semibold transition-all duration-300 inline-flex items-center justify-center group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">
+                      Upcoming Event
+                    </h3>
+                    <p className="text-xl md:text-2xl font-bold text-white mb-2">
+                      End of April 2026
+                    </p>
+                    <p className="text-gray-400 flex items-center gap-2">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      Murfreesboro, TN
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  to="/register"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg text-white transition-all duration-300 group"
+                  style={{
+                    background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+                    boxShadow: '0 10px 30px rgba(59, 130, 246, 0.4), 0 1px 0 rgba(255, 255, 255, 0.1) inset'
+                  }}
+                >
                   Register Your Team
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Link>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  to="/rules"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg text-white transition-all duration-300 border-2 border-white/20 hover:border-white/40 backdrop-blur-sm"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)'
+                  }}
+                >
+                  View Details
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
 
-          {/* Visual Elements */}
+          {/* Video Card */}
           <motion.div
             variants={itemVariants}
             className="relative"
           >
-            <Link to="/register" className="block">
-              <div 
-                className="relative rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 cursor-pointer"
-                style={{
-                  padding: '3px',
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))',
-                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.15), inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15), 0 10px 24px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.08)',
-                  filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15))'
-                }}
-              >
-                <div className="relative bg-gray-50 rounded-3xl p-6 sm:p-10">
-                <div className="text-center mb-8">
-                  <motion.h3
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    whileHover={{ scale: 1.1, color: '#6a0dad' }}
-                    transition={{ delay: 0.5, duration: 0.6 }}
-                    className="text-3xl font-semibold mb-2 text-primary-600"
-                  >
-                    Team Registration
-                  </motion.h3>
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7, duration: 0.6 }}
-                    className="text-gray-600 text-lg"
-                  >
-                    Secure your spot in the tournament
-                  </motion.p>
+            <div className="rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10"
+              style={{
+                background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8))',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)'
+              }}
+            >
+              <div className="p-6 sm:p-8">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Watch Tournament Highlights
+                  </h3>
+                  <p className="text-gray-400">
+                    See what makes Galaxy23 special
+                  </p>
                 </div>
 
-                <div className="relative rounded-2xl overflow-hidden border border-primary-100 aspect-[4/3]">
+                <div className="relative rounded-xl overflow-hidden aspect-[16/9] bg-black">
                   <video
+                    ref={videoRef}
                     src="/animated logo video.MOV"
                     autoPlay
                     loop
                     playsInline
-                    muted
+                    muted={isMuted}
                     className="w-full h-full object-cover"
                   >
                     Your browser does not support the video tag.
                   </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 text-white drop-shadow-lg">
-                    <p className="text-lg sm:text-2xl font-semibold">Galaxy23 7v7 Tournament</p>
-                  </div>
-                </div>
+                  {/* Mute/Unmute Button */}
+                  <button
+                    onClick={() => setIsMuted(!isMuted)}
+                    className="absolute bottom-4 right-4 p-3 rounded-lg backdrop-blur-md transition-all duration-300 hover:scale-105"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.7)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)'
+                    }}
+                    aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+                  >
+                    {isMuted ? (
+                      <VolumeX className="w-5 h-5 text-white" />
+                    ) : (
+                      <Volume2 className="w-5 h-5 text-white" />
+                    )}
+                  </button>
                 </div>
               </div>
-            </Link>
+            </div>
           </motion.div>
         </motion.div>
       </div>

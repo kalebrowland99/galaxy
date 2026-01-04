@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Users, Calendar, Heart, Eye, Info, ShoppingBag, Shield, CalendarDays, Gift } from 'lucide-react';
+import { Menu, X, Users, Heart, Eye, Info, Shield, Gift } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,7 @@ const Navbar = () => {
     // { name: 'Events', href: '/events', icon: CalendarDays }, // Hidden - uncomment to restore
     // { name: 'Schedule', href: '/schedule', icon: Calendar }, // Hidden - uncomment to restore
     { name: 'Watch Live', href: '/watch', icon: Eye },
-    { name: 'Team Gear', href: '/gear', icon: ShoppingBag },
+    // { name: 'Team Gear', href: '/gear', icon: ShoppingBag }, // Hidden - uncomment to restore
     { name: 'Sponsors', href: '/sponsors', icon: Heart },
     { name: 'Rules', href: '/rules', icon: Shield },
     { name: 'About', href: '/about', icon: Info },

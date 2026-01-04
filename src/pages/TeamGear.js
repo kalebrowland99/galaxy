@@ -14,7 +14,8 @@ const TeamGear = () => {
       category: 'safety',
       image: '/Soft Helmet.PNG',
       inStock: true,
-      required: true
+      required: true,
+      paymentLink: 'https://buy.stripe.com/9B6cN5bdefCt04mbcUa7C02'
     },
     {
       id: 2,
@@ -24,7 +25,8 @@ const TeamGear = () => {
       category: 'apparel',
       image: '/Skill Gloves.PNG',
       inStock: true,
-      required: false
+      required: false,
+      paymentLink: 'https://buy.stripe.com/3cIbJ1bde75XeZg1Cka7C03'
     },
     {
       id: 3,
@@ -34,7 +36,8 @@ const TeamGear = () => {
       category: 'apparel',
       image: '/gear/IMG_5807.jpeg',
       inStock: true,
-      required: false
+      required: false,
+      paymentLink: 'https://buy.stripe.com/cNi9ATepq75XeZg1Cka7C04'
     },
     {
       id: 9,
@@ -44,7 +47,8 @@ const TeamGear = () => {
       category: 'accessories',
       image: '/gear/IMG_5683.jpg',
       inStock: true,
-      required: false
+      required: false,
+      paymentLink: 'https://buy.stripe.com/9B68wP1CE3TL8AS1Cka7C05'
     },
     {
       id: 12,
@@ -54,7 +58,8 @@ const TeamGear = () => {
       category: 'accessories',
       image: '/gear/IMG_5414.jpg',
       inStock: true,
-      required: false
+      required: false,
+      paymentLink: 'https://buy.stripe.com/dRmaEX3KMbmd9EWdl2a7C06'
     },
     {
       id: 13,
@@ -64,7 +69,8 @@ const TeamGear = () => {
       category: 'apparel',
       image: '/gear/IMG_5413.jpg',
       inStock: true,
-      required: false
+      required: false,
+      paymentLink: 'https://buy.stripe.com/6oU4gz956ai97wO0yga7C07'
     }
   ];
 
@@ -244,7 +250,7 @@ const GearCard = ({ item, required }) => {
             onClick={() => {
               const successUrl = encodeURIComponent(`${window.location.origin}/payment-success`);
               const cancelUrl = encodeURIComponent(`${window.location.origin}/gear`);
-              window.location.href = `https://buy.stripe.com/dRmcN5dlm2PH7wOa8Qa7C01?success_url=${successUrl}&cancel_url=${cancelUrl}`;
+              window.location.href = `${item.paymentLink}?success_url=${successUrl}&cancel_url=${cancelUrl}`;
             }}
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 flex items-center"
           >

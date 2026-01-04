@@ -71,7 +71,7 @@ const Home = () => {
       <Hero />
       
       {/* Features Section */}
-      <section className="h-screen flex items-center relative overflow-hidden" style={{
+      <section className="min-h-screen lg:h-screen flex items-center relative overflow-hidden py-16 lg:py-0" style={{
         background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)'
       }}>
         {/* Animated background elements */}
@@ -86,10 +86,10 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12 lg:mb-16"
+            className="text-center mb-8 lg:mb-16"
           >
             <motion.h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-black mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-6 px-4"
               style={{
                 background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #60a5fa 100%)',
                 WebkitBackgroundClip: 'text',
@@ -100,7 +100,7 @@ const Home = () => {
             >
               Why Choose Galaxy23?
             </motion.h2>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-medium">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-medium px-4">
               Experience the premier 7v7 football tournament. Compete against elite teams, 
               develop your skills, and create lasting memories. Where excellence meets opportunity.
             </p>
@@ -111,7 +111,7 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center max-w-7xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-items-center max-w-7xl mx-auto"
           >
             {features.map((feature, index) => {
               const Icon = feature.icon;
@@ -145,8 +145,8 @@ const Home = () => {
                       </div>
                       
                       {/* Content Section - Separate from image */}
-                      <div className="p-6 space-y-3">
-                        <h3 className="text-xl font-bold text-white">
+                      <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">
+                        <h3 className="text-lg sm:text-xl font-bold text-white">
                           {feature.title}
                         </h3>
                         <p className="text-sm text-gray-300 leading-relaxed">
@@ -155,15 +155,15 @@ const Home = () => {
                       </div>
                     </>
                   ) : (
-                    <div className="p-6">
-                      <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-4"
+                    <div className="p-4 sm:p-6">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-3 sm:mb-4"
                         style={{
                           background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
                         }}
                       >
-                        <Icon className="w-8 h-8 text-white" />
+                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-3">
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
                         {feature.title}
                       </h3>
                       <p className="text-sm text-gray-300 leading-relaxed">
@@ -179,7 +179,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="h-screen flex items-center relative overflow-hidden" style={{ 
+      <section className="min-h-screen lg:h-screen flex items-center relative overflow-hidden py-16 lg:py-0" style={{ 
         background: 'linear-gradient(180deg, #16213e 0%, #0f172a 100%)'
       }}>
         {/* Animated gradient orbs */}
@@ -188,7 +188,7 @@ const Home = () => {
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
         </div>
         
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10 w-full">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -196,7 +196,7 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
             >
               <span className="block text-white font-light">Ready to</span>
               <span className="block font-black" style={{
@@ -208,25 +208,26 @@ const Home = () => {
                 Compete?
               </span>
             </motion.h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4">
               Secure your team's place in the premier 7v7 football tournament. 
               Limited spots available for elite competition. Registration is now open.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
                 <Link 
                   to="/register" 
-                  className="relative inline-block rounded-2xl overflow-hidden group"
+                  className="relative inline-block rounded-2xl overflow-hidden group w-full sm:w-auto"
                   style={{
                     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #60a5fa 100%)',
                     padding: '3px',
                     boxShadow: '0 10px 40px rgba(102, 126, 234, 0.4), 0 0 20px rgba(96, 165, 250, 0.3)'
                   }}
                 >
-                  <span className="block rounded-2xl py-4 px-8 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-black text-lg transition-all duration-300 group-hover:from-purple-500 group-hover:to-blue-400">
+                  <span className="block rounded-2xl py-3 sm:py-4 px-6 sm:px-8 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-black text-base sm:text-lg transition-all duration-300 group-hover:from-purple-500 group-hover:to-blue-400">
                     Register Your Team Now
                   </span>
                 </Link>
@@ -234,10 +235,11 @@ const Home = () => {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
                 <Link 
                   to="/rules" 
-                  className="relative inline-block rounded-2xl overflow-hidden group"
+                  className="relative inline-block rounded-2xl overflow-hidden group w-full sm:w-auto"
                   style={{
                     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))',
                     backdropFilter: 'blur(10px)',
@@ -245,7 +247,7 @@ const Home = () => {
                     padding: '3px',
                   }}
                 >
-                  <span className="block rounded-2xl py-4 px-8 bg-white/10 backdrop-blur-sm text-white font-bold text-lg transition-all duration-300 group-hover:bg-white/20">
+                  <span className="block rounded-2xl py-3 sm:py-4 px-6 sm:px-8 bg-white/10 backdrop-blur-sm text-white font-bold text-base sm:text-lg transition-all duration-300 group-hover:bg-white/20">
                     View Tournament Rules 📋
                   </span>
                 </Link>

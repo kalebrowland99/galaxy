@@ -291,7 +291,7 @@ const Sponsors = () => {
                   className="w-full mt-6 sm:mt-8 btn-primary text-sm sm:text-base"
                   onClick={() => {
                     // Open email client with sponsorship inquiry
-                    window.location.href = 'mailto:galaxycorp23@gmail.com?subject=Sponsorship Inquiry - ' + tier.name + ' Tier';
+                    window.location.href = 'mailto:galaxycorp23@gmail.com?subject=Sponsorship Inquiry - ' + tier.name + ' Tier&cc=dominickpendergrass@proton.me,schneiderjacob@hotmail.com';
                   }}
                 >
                   Become a {tier.name} Sponsor
@@ -322,7 +322,7 @@ const Sponsors = () => {
                 className="btn-secondary"
                 onClick={() => {
                   // Open email client with contact form
-                  window.location.href = 'mailto:galaxycorp23@gmail.com?subject=Partnership Inquiry';
+                  window.location.href = 'mailto:galaxycorp23@gmail.com?subject=Partnership Inquiry&cc=dominickpendergrass@proton.me,schneiderjacob@hotmail.com';
                 }}
               >
                 Contact Us Today

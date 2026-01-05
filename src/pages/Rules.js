@@ -437,7 +437,7 @@ const Rules = () => {
             <button 
               className="btn-secondary"
               onClick={() => {
-                window.location.href = 'mailto:galaxycorp23@gmail.com?subject=Rules and Policies Question';
+                window.location.href = 'mailto:galaxycorp23@gmail.com?subject=Rules and Policies Question&cc=dominickpendergrass@proton.me,schneiderjacob@hotmail.com';
               }}
             >
               Contact Tournament Officials

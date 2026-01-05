@@ -266,7 +266,7 @@ const About = () => {
                 className="btn-outline"
                 onClick={() => {
                   // Open email client with contact form
-                  window.location.href = 'mailto:contact@galaxy23.com?subject=General Inquiry';
+                  window.location.href = 'mailto:galaxy23corp@gmail.com?subject=General Inquiry';
                 }}
               >
                 Contact Us

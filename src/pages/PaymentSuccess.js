@@ -82,7 +82,7 @@ const PaymentSuccess = () => {
               <li>• You will receive an email confirmation with your receipt</li>
               <li>• For gear orders: Items will ship within 3-5 business days</li>
               <li>• For registrations: Your team is now officially registered</li>
-              <li>• Contact us at support@galaxy23.com if you have questions</li>
+              <li>• Contact us at galaxy23corp@gmail.com if you have questions</li>
             </ul>
           </div>
 

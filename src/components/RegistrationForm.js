@@ -151,18 +151,17 @@ const RegistrationForm = () => {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Age Group *
+            Choose your category *
           </label>
           <select
-            {...register('ageGroup', { required: 'Age group is required' })}
+            {...register('ageGroup', { required: 'Category is required' })}
             className="input-field"
           >
-            <option value="">Select age group</option>
-            <option value="8-10">8-10 years</option>
-            <option value="11-13">11-13 years</option>
-            <option value="14-16">14-16 years</option>
-            <option value="17-19">17-19 years</option>
-            <option value="adult">Adult (18+)</option>
+            <option value="">Select category</option>
+            <option value="8U">8U</option>
+            <option value="9U">9U</option>
+            <option value="10U">10U</option>
+            <option value="11U">11U</option>
           </select>
           {errors.ageGroup && (
             <p className="text-red-500 text-sm mt-1 flex items-center">

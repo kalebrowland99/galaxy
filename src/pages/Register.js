@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <div className="relative overflow-hidden" style={{ height: '25vh', minHeight: '200px' }}>
+      <div className="relative overflow-hidden" style={{ minHeight: '280px' }}>
         {/* Sunset Football Field Background */}
         <div className="absolute inset-0" style={{ opacity: 0.5 }}>
           <img
@@ -16,7 +16,7 @@ const Register = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="max-w-7xl mx-auto container-padding py-20 relative z-10">
+        <div className="max-w-7xl mx-auto container-padding py-12 sm:py-16 md:py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ const Register = () => {
             className="text-center"
           >
             <h1 
-              className="heading-xl mb-6 font-bold"
+              className="heading-xl mb-4 sm:mb-6 font-bold px-4"
               style={{
                 color: '#8B4513',
                 textShadow: '2px 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.8)',

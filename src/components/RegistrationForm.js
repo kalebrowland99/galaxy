@@ -162,6 +162,10 @@ const RegistrationForm = () => {
             <option value="9U">9U</option>
             <option value="10U">10U</option>
             <option value="11U">11U</option>
+            <option value="12U">12U</option>
+            <option value="13U">13U</option>
+            <option value="14U">14U</option>
+            <option value="High School">High School</option>
           </select>
           {errors.ageGroup && (
             <p className="text-red-500 text-sm mt-1 flex items-center">

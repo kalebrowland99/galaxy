@@ -205,10 +205,9 @@ const RegistrationForm = () => {
             className="input-field"
           >
             <option value="">Select experience level</option>
-            <option value="beginner">Beginner (0-1 years)</option>
-            <option value="intermediate">Intermediate (1-3 years)</option>
-            <option value="advanced">Advanced (3+ years)</option>
-            <option value="elite">Elite/Competitive</option>
+            <option value="club">Club</option>
+            <option value="competitive">Competitive</option>
+            <option value="elite">Elite</option>
           </select>
           {errors.experienceLevel && (
             <p className="text-red-500 text-sm mt-1 flex items-center">

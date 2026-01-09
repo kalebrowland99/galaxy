@@ -58,7 +58,7 @@ const Register = () => {
               overflowWrap: 'break-word',
               hyphens: 'auto'
             }}>
-              Fill out the form below to register your team for the Galaxy23 tournament. $1,000 per team with a multiple team discount. Secure your spot now with a $250 non-refundable deposit.
+              Fill out the form below to register your team for the Galaxy23 tournament. 8U-11U $500, 12U $600, Middle School $750 and High School $1,000 per team with a multiple team discount. Secure your spot now with a $250 non-refundable deposit.
             </p>
           </motion.div>
           

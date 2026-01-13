@@ -31,7 +31,7 @@ const About = () => {
     {
       name: 'Dj Pendergrass',
       role: 'Events Coordinator',
-      bio: 'Dj has been a Multi sport head coach for 19+ years teaching kids what it takes to become men/woman while helping them to excel. He is a youth community advocate',
+      bio: 'Dj has been a Multi sport head coach for 19+ years teaching kids what it takes to become men/women while helping them to excel. He is a youth community advocate',
       image: '/DJ 1.jpeg'
     },
     {

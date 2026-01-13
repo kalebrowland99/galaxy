@@ -153,19 +153,13 @@ const RegistrationForm = () => {
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Choose your category *
           </label>
-          <select
-            {...register('ageGroup', { required: 'Category is required' })}
-            className="input-field"
-          >
-            <option value="">Select category</option>
-            <option value="High School">High School</option>
-          </select>
-          {errors.ageGroup && (
-            <p className="text-red-500 text-sm mt-1 flex items-center">
-              <AlertCircle className="w-4 h-4 mr-1" />
-              {errors.ageGroup.message}
-            </p>
-          )}
+          <input
+            type="text"
+            value="High School"
+            readOnly
+            {...register('ageGroup')}
+            className="input-field bg-gray-100 cursor-not-allowed"
+          />
         </div>
 
         <div>

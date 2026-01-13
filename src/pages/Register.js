@@ -58,7 +58,7 @@ const Register = () => {
               overflowWrap: 'break-word',
               hyphens: 'none'
             }}>
-              $1,000 per team with an $250 dollar non-refundable down payment. Full payment due 2 weeks proir to event
+              $1,000 per team with a $250 dollar non-refundable down payment. Full payment due 2 weeks proir to event
             </p>
           </motion.div>
           

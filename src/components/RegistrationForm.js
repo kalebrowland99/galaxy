@@ -95,7 +95,7 @@ const RegistrationForm = () => {
       setTimeout(() => {
         const successUrl = encodeURIComponent(`${window.location.origin}/payment-success`);
         const cancelUrl = encodeURIComponent(`${window.location.origin}/register`);
-        window.location.href = `https://buy.stripe.com/7sYcN5dlm61T7wOa8Qa7C00?success_url=${successUrl}&cancel_url=${cancelUrl}`;
+        window.location.href = `https://buy.stripe.com/bJe6oH81275XcR84Owa7C09?success_url=${successUrl}&cancel_url=${cancelUrl}`;
       }, 1500);
       
     } catch (error) {
@@ -474,7 +474,7 @@ const RegistrationForm = () => {
             <p className="text-sm text-gray-600">Non-refundable deposit to secure your spot</p>
           </div>
           <div className="text-right">
-            <p className="text-2xl font-bold text-galaxy-600">$250</p>
+            <p className="text-2xl font-bold text-galaxy-600">$150</p>
             <p className="text-sm text-gray-500">USD</p>
           </div>
         </div>
@@ -531,7 +531,7 @@ const RegistrationForm = () => {
           Payment Method
         </h3>
         <p className="text-gray-600 mb-4">
-          After completing this form, you'll be redirected to our secure Stripe payment page to pay the $250 deposit.
+          After completing this form, you'll be redirected to our secure Stripe payment page to pay the $150 deposit.
         </p>
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
           <p className="text-blue-800 text-sm">

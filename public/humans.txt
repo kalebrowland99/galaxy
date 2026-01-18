@@ -1,0 +1,14 @@
+# humanstxt.org
+
+/* TEAM */
+Name: Galaxy23 Development Team
+Site: galaxy23sports.com
+Location: USA
+
+/* SITE */
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: React, Firebase, Stripe
+Software: VS Code, Node.js, Git
+
+/* THANKS */
+To all the youth athletes, coaches, and families who make flag football tournaments possible.

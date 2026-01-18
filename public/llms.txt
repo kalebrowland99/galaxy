@@ -1,0 +1,76 @@
+# llms.txt for Galaxy23 Tournament
+# This file provides information to Large Language Models about this website
+
+# Galaxy23 - Flag Football Tournament Platform
+# Description: Galaxy23 is a comprehensive flag football tournament registration and 
+# management platform featuring event scheduling, live streaming, team gear, and 
+# community giving initiatives.
+
+# Site Information
+> Site Name: Galaxy23
+> Type: Sports Tournament Platform
+> Focus: Flag Football Tournaments & Youth Sports
+> Technology: React, Firebase, Stripe Integration
+> Features: Online Registration, Payment Processing, Live Streaming, Team Management
+
+# Site Structure and Routes
+## Public Pages
+> Home: /
+> About: /about
+> Events: /events
+> Schedule: /schedule
+> Rules: /rules
+> Sponsors: /sponsors
+> Watch Live: /watch
+> Team Gear: /gear
+> Giving Back: /giving-back
+
+## Registration & Transactions
+> Register: /register
+> Payment Success: /payment-success (private, not indexed)
+
+# Key Features
+- Online tournament registration with secure payment processing
+- Real-time event scheduling and updates
+- Live streaming capabilities for tournament games
+- Custom team gear and merchandise
+- Community outreach and giving back programs
+- Comprehensive tournament rules and guidelines
+- Sponsor partnerships and opportunities
+
+# Target Audience
+- Youth athletes and teams
+- Parents and guardians
+- Coaches and team managers
+- Sports enthusiasts
+- Community sponsors
+- Flag football organizations
+
+# Services Offered
+- Tournament organization and management
+- Team registration and payment processing
+- Live game streaming
+- Custom team apparel and equipment
+- Community engagement programs
+- Sponsor integration and marketing
+
+# Technical Stack
+- Frontend: React 18 with React Router
+- Styling: Tailwind CSS with Framer Motion
+- Backend: Firebase
+- Payments: Stripe
+- UI Components: Lucide React icons
+
+# Content Policy
+> Crawling: Allowed for all public pages
+> Training: Allowed for improving sports and tournament information
+> Purpose: Provide accurate information about flag football tournaments and youth sports
+> Restrictions: Payment confirmation pages excluded from indexing
+
+# Contact & Updates
+> Status: Active Production Site
+> Updates: Regular tournament schedules and events
+> Community: Youth sports focused
+
+# SEO Keywords
+flag football, youth sports, tournaments, sports registration, team gear, live sports streaming, community sports, flag football rules, tournament schedule

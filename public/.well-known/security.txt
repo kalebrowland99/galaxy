@@ -1,0 +1,8 @@
+# Security Contact Information
+# If you discover any security vulnerabilities, please report them responsibly.
+
+Contact: mailto:security@galaxy23sports.com
+Preferred-Languages: en
+Canonical: https://galaxy23sports.com/.well-known/security.txt
+Policy: https://galaxy23sports.com/security-policy
+Expires: 2027-01-18T00:00:00.000Z

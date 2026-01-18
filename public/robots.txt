@@ -1,0 +1,25 @@
+# robots.txt for Galaxy23 Tournament
+
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Disallow indexing of payment and transaction pages
+Disallow: /payment-success
+
+# Crawl rate (optional - adjust based on server capacity)
+# Crawl-delay: 10
+
+# Sitemap location (update with your actual domain when deployed)
+Sitemap: https://galaxy23sports.com/sitemap.xml
+
+# Common bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots (optional)
+# User-agent: BadBot
+# Disallow: /

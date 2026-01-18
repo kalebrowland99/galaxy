@@ -2,7 +2,7 @@
 
 /* TEAM */
 Name: Galaxy23 Development Team
-Site: galaxy23sports.com
+Site: galaxy23corp.com
 Location: USA
 
 /* SITE */

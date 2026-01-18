@@ -10,8 +10,8 @@ Disallow: /payment-success
 # Crawl rate (optional - adjust based on server capacity)
 # Crawl-delay: 10
 
-# Sitemap location (update with your actual domain when deployed)
-Sitemap: https://galaxy23sports.com/sitemap.xml
+# Sitemap location
+Sitemap: https://galaxy23corp.com/sitemap.xml
 
 # Common bots
 User-agent: Googlebot

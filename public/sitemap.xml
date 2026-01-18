@@ -3,7 +3,7 @@
   
   <!-- Home Page -->
   <url>
-    <loc>https://galaxy23sports.com/</loc>
+    <loc>https://galaxy23corp.com/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- About -->
   <url>
-    <loc>https://galaxy23sports.com/about</loc>
+    <loc>https://galaxy23corp.com/about</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
   
   <!-- Events -->
   <url>
-    <loc>https://galaxy23sports.com/events</loc>
+    <loc>https://galaxy23corp.com/events</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -27,7 +27,7 @@
   
   <!-- Schedule -->
   <url>
-    <loc>https://galaxy23sports.com/schedule</loc>
+    <loc>https://galaxy23corp.com/schedule</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -35,7 +35,7 @@
   
   <!-- Rules -->
   <url>
-    <loc>https://galaxy23sports.com/rules</loc>
+    <loc>https://galaxy23corp.com/rules</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -43,7 +43,7 @@
   
   <!-- Watch Live -->
   <url>
-    <loc>https://galaxy23sports.com/watch</loc>
+    <loc>https://galaxy23corp.com/watch</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -51,7 +51,7 @@
   
   <!-- Team Gear -->
   <url>
-    <loc>https://galaxy23sports.com/gear</loc>
+    <loc>https://galaxy23corp.com/gear</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -59,7 +59,7 @@
   
   <!-- Sponsors -->
   <url>
-    <loc>https://galaxy23sports.com/sponsors</loc>
+    <loc>https://galaxy23corp.com/sponsors</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -67,7 +67,7 @@
   
   <!-- Giving Back -->
   <url>
-    <loc>https://galaxy23sports.com/giving-back</loc>
+    <loc>https://galaxy23corp.com/giving-back</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -75,7 +75,7 @@
   
   <!-- Registration -->
   <url>
-    <loc>https://galaxy23sports.com/register</loc>
+    <loc>https://galaxy23corp.com/register</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

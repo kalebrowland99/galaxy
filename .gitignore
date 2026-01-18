@@ -84,4 +84,11 @@ jspm_packages/
 .dynamodb/
 
 # TernJS port file
-.tern-port public/animated logo video.MOV
+.tern-port
+
+# Large media files (host these on CDN instead)
+public/animated\ logo\ video.MOV
+public/*.MOV
+public/*.mov
+*.MOV
+*.mov

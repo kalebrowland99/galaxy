@@ -85,17 +85,18 @@ const AauBasketball = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {[
-              { icon: Trophy, title: 'Elite Competition', description: 'Compete against the best AAU basketball teams' },
-              { icon: Users, title: 'Multiple Divisions', description: 'Age-appropriate divisions for all skill levels' },
-              { icon: MapPin, title: 'Premier Venues', description: 'State-of-the-art basketball facilities' },
-              { icon: Calendar, title: 'Coming Soon', description: 'Tournament dates to be announced' }
+              { icon: Trophy, title: 'Elite Competition', description: 'Compete against the best AAU basketball teams', image: '/basketball-competition.jpeg' },
+              { icon: Users, title: 'Multiple Divisions', description: 'Age-appropriate divisions for all skill levels', image: '/basketball-divisions.jpeg' },
+              { icon: MapPin, title: 'Premier Venues', description: 'State-of-the-art basketball facilities', image: '/basketball-venue.jpeg' },
+              { icon: Calendar, title: 'Coming Soon', description: 'Tournament dates to be announced', image: '/basketball-tournament.jpeg' }
             ].map((item, index) => {
               const Icon = item.icon;
               return (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="relative p-6 rounded-2xl overflow-hidden group"
+                  whileHover={{ y: -8 }}
+                  className="group w-full rounded-2xl overflow-hidden"
                   style={{
                     background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
                     backdropFilter: 'blur(10px)',
@@ -103,18 +104,46 @@ const AauBasketball = () => {
                     boxShadow: '0 10px 40px rgba(0, 0, 0, 0.4)',
                   }}
                 >
-                  <div className="relative z-10">
-                    <div 
-                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
-                      style={{
-                        background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
-                      }}
-                    >
-                      <Icon className="w-7 h-7 text-white" />
+                  {item.image ? (
+                    <>
+                      {/* Image Section */}
+                      <div className="relative w-full aspect-video overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          onError={(e) => {
+                            console.error('Image failed to load:', e.target.src);
+                          }}
+                        />
+                        {/* Subtle gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                      </div>
+                      
+                      {/* Content Section - Separate from image */}
+                      <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">
+                        <h3 className="text-lg sm:text-xl font-bold text-white">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-300 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="p-6">
+                      <div 
+                        className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                        style={{
+                          background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+                        }}
+                      >
+                        <Icon className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                      <p className="text-gray-300 text-sm">{item.description}</p>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-gray-300 text-sm">{item.description}</p>
-                  </div>
+                  )}
                 </motion.div>
               );
             })}

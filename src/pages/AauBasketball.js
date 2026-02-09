@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Trophy, Users, MapPin, Calendar } from 'lucide-react';
+import { Trophy, Users, MapPin } from 'lucide-react';
 
 const AauBasketball = () => {
   const containerVariants = {
@@ -82,13 +82,12 @@ const AauBasketball = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {[
               { icon: Trophy, title: 'Elite Competition', description: 'Compete against the best AAU basketball teams', image: '/basketball-competition.jpeg' },
               { icon: Users, title: 'Multiple Divisions', description: 'Age-appropriate divisions for all skill levels', image: '/basketball-divisions.jpeg' },
-              { icon: MapPin, title: 'Premier Venues', description: 'State-of-the-art basketball facilities', image: '/basketball-venue.jpeg' },
-              { icon: Calendar, title: 'Coming Soon', description: 'Tournament dates to be announced', image: '/basketball-tournament.jpeg' }
+              { icon: MapPin, title: 'Premier Venues', description: 'State-of-the-art basketball facilities', image: '/basketball-venue.jpeg' }
             ].map((item, index) => {
               const Icon = item.icon;
               return (

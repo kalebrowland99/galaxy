@@ -97,8 +97,8 @@ const Hero = () => {
                     <h3 className="text-xs sm:text-sm font-semibold text-blue-400 uppercase tracking-wider mb-1 sm:mb-2">
                       Upcoming Event
                     </h3>
-                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2">
-                      End of April 2026
+                    <p className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2 leading-snug">
+                      April 25th and 26th at 2-time defending 6A Football State Champions Oakland Patriots, Ray Hughes Stadium
                     </p>
                     <p className="text-sm sm:text-base text-gray-400 flex items-center gap-2">
                       <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

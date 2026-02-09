@@ -27,7 +27,7 @@ const Navbar = () => {
 
   const navigation = [
     { name: 'Home', href: '/', icon: null }, // Icon removed
-    { name: 'Register', href: '/register', icon: Users },
+    { name: '7v7 Registration', href: '/register', icon: Users },
     // { name: 'Events', href: '/events', icon: CalendarDays }, // Hidden - uncomment to restore
     // { name: 'Schedule', href: '/schedule', icon: Calendar }, // Hidden - uncomment to restore
     { name: 'Watch Live', href: '/watch', icon: Eye },
@@ -36,6 +36,7 @@ const Navbar = () => {
     { name: 'Rules', href: '/rules', icon: Shield },
     { name: 'About', href: '/about', icon: Info },
     { name: 'AAU Basketball', href: '/aau-basketball', icon: BasketballIcon },
+    { name: 'AAU Registration', href: '/basketball-register', icon: Users },
     // { name: 'Giving Back', href: '/giving-back', icon: Gift }, // Hidden - uncomment to restore
   ];
 

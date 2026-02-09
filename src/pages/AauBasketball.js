@@ -111,7 +111,7 @@ const AauBasketball = () => {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                           onError={(e) => {
                             console.error('Image failed to load:', e.target.src);
                           }}

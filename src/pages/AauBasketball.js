@@ -102,7 +102,7 @@ const AauBasketball = () => {
                 textShadow: '0 0 30px rgba(102, 126, 234, 0.5)'
               }}
             >
-              Why Choose Galaxy23 Basketball?
+              Galaxy23 Sports AAU Basketball
             </motion.h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-medium px-4">
               Experience elite AAU basketball competition. Compete against the best teams, 

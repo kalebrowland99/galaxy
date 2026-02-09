@@ -75,14 +75,47 @@ const AauBasketball = () => {
       </div>
 
       {/* Coming Soon Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto container-padding px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen lg:h-screen flex items-center relative overflow-hidden py-16 lg:py-0" style={{
+        background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)'
+      }}>
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto container-padding relative z-10 w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 lg:mb-16"
+          >
+            <motion.h2 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-6 px-4"
+              style={{
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #60a5fa 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                textShadow: '0 0 30px rgba(102, 126, 234, 0.5)'
+              }}
+            >
+              Why Choose Galaxy23 Basketball?
+            </motion.h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-medium px-4">
+              Experience elite AAU basketball competition. Compete against the best teams, 
+              develop your skills, and create lasting memories. Where excellence meets opportunity.
+            </p>
+          </motion.div>
+
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center max-w-7xl mx-auto"
           >
             {[
               { icon: Trophy, title: 'Elite Competition', description: 'Compete against the best AAU basketball teams', image: '/basketball-competition.jpeg' },
@@ -147,44 +180,91 @@ const AauBasketball = () => {
               );
             })}
           </motion.div>
+        </div>
+      </section>
 
+      {/* CTA Section */}
+      <section className="min-h-screen lg:h-screen flex items-center relative overflow-hidden py-16 lg:py-0" style={{ 
+        background: 'linear-gradient(180deg, #16213e 0%, #0f172a 100%)'
+      }}>
+        {/* Animated gradient orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10 w-full">
           {/* Main Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mt-16 max-w-4xl mx-auto text-center"
           >
-            <div className="card-elevated p-8 md:p-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Coming Soon
-              </h2>
-              <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-8">
-                To Murfreesboro, TN: The Galaxy23 Sports Basketball Classic!
-              </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Galaxy23 is expanding into AAU Basketball! We're bringing the same level of excellence and 
-                professionalism that made our 7v7 football tournaments successful to youth basketball.
-              </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Stay tuned for tournament announcements, registration details, and more information about 
-                our upcoming AAU Basketball events.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.h2 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
+            >
+              <span className="block text-white font-light">Ready to</span>
+              <span className="block font-black" style={{
+                background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>
+                Compete?
+              </span>
+            </motion.h2>
+            <p className="text-2xl md:text-3xl font-bold text-orange-400 mb-6">
+              To Murfreesboro, TN: The Galaxy23 Sports Basketball Classic!
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4">
+              Galaxy23 is expanding into AAU Basketball! We're bringing the same level of excellence and 
+              professionalism that made our 7v7 football tournaments successful to youth basketball.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4">
+              Stay tuned for tournament announcements, registration details, and more information about 
+              our upcoming AAU Basketball events.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
+              >
                 <Link
                   to="/basketball-register"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg text-white transition-all duration-300 btn-primary"
+                  className="relative inline-block rounded-2xl overflow-hidden group w-full sm:w-auto"
+                  style={{
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #60a5fa 100%)',
+                    padding: '3px',
+                    boxShadow: '0 10px 40px rgba(102, 126, 234, 0.4), 0 0 20px rgba(96, 165, 250, 0.3)'
+                  }}
                 >
-                  Register Your Team
+                  <span className="block rounded-2xl py-3 sm:py-4 px-6 sm:px-8 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-black text-base sm:text-lg transition-all duration-300 group-hover:from-purple-500 group-hover:to-blue-400">
+                    Register Your Team Now
+                  </span>
                 </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
+              >
                 <a
                   href="mailto:info@galaxy23corp.com"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 btn-outline"
+                  className="relative inline-block rounded-2xl overflow-hidden group w-full sm:w-auto"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))',
+                    backdropFilter: 'blur(10px)',
+                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    padding: '3px',
+                  }}
                 >
-                  Get Notified
+                  <span className="block rounded-2xl py-3 sm:py-4 px-6 sm:px-8 bg-white/10 backdrop-blur-sm text-white font-bold text-base sm:text-lg transition-all duration-300 group-hover:bg-white/20">
+                    Get Notified 📧
+                  </span>
                 </a>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

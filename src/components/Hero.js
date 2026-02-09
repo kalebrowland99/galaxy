@@ -98,7 +98,7 @@ const Hero = () => {
                       Upcoming Event
                     </h3>
                     <p className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2 leading-snug">
-                      April 25th and 26th at Ray Hughes Stadium, home of the 2-time Defending 6A Tennessee Football State Champion Oakland Patriots
+                      April 25th and 26th at Ray Hughes Stadium, Home of the 2-time Defending 6A Tennessee Football State Champion Oakland Patriots
                     </p>
                     <p className="text-sm sm:text-base text-gray-400 flex items-center gap-2">
                       <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

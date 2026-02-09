@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Users, Heart, Eye, Info, Shield } from 'lucide-react';
 
+// Basketball Icon Component
+const BasketballIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+    <path d="M2 12h20M12 2v20M6 3.5C8 7 10 12 6 20.5M18 3.5C16 7 14 12 18 20.5" stroke="currentColor" strokeWidth="2"/>
+  </svg>
+);
+
 // Navigation component - Giving Back tab hidden
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +35,7 @@ const Navbar = () => {
     { name: 'Sponsors', href: '/sponsors', icon: Heart },
     { name: 'Rules', href: '/rules', icon: Shield },
     { name: 'About', href: '/about', icon: Info },
+    { name: 'AAU Basketball', href: '/aau-basketball', icon: BasketballIcon },
     // { name: 'Giving Back', href: '/giving-back', icon: Gift }, // Hidden - uncomment to restore
   ];
 

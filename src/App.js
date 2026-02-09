@@ -14,6 +14,7 @@ import About from './pages/About';
 import TeamGear from './pages/TeamGear';
 import GivingBack from './pages/GivingBack';
 import PaymentSuccess from './pages/PaymentSuccess';
+import AauBasketball from './pages/AauBasketball';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/gear" element={<TeamGear />} />
             <Route path="/giving-back" element={<GivingBack />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
+            <Route path="/aau-basketball" element={<AauBasketball />} />
           </Routes>
         </main>
         <Toaster

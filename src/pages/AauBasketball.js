@@ -133,7 +133,7 @@ const AauBasketball = () => {
                 Coming Soon
               </h2>
               <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-8">
-                To Murfreesboro, TN: The Galaxy23 Sports Basketball "Soon to Be" Classic!
+                To Murfreesboro, TN: The Galaxy23 Sports Basketball Classic!
               </p>
               <p className="text-lg text-gray-600 mb-8">
                 Galaxy23 is expanding into AAU Basketball! We're bringing the same level of excellence and 

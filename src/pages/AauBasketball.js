@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Trophy, Users, MapPin, Calendar } from 'lucide-react';
 
@@ -143,9 +144,15 @@ const AauBasketball = () => {
                 our upcoming AAU Basketball events.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/basketball-register"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg text-white transition-all duration-300 btn-primary"
+                >
+                  Register Your Team
+                </Link>
                 <a
                   href="mailto:info@galaxy23corp.com"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg text-white transition-all duration-300 btn-primary"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 btn-outline"
                 >
                   Get Notified
                 </a>

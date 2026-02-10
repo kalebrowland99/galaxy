@@ -118,7 +118,7 @@ const AauBasketball = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center max-w-7xl mx-auto"
           >
             {[
-              { icon: Trophy, title: 'Elite Competition', description: 'Compete against the best AAU basketball teams', image: '/basketball-competition.jpeg' },
+              { icon: Trophy, title: 'Elite Competition', description: 'Compete against the best AAU basketball teams', image: '/aau-basketball-competitive.jpeg' },
               { icon: Users, title: 'Multiple Divisions', description: 'Age-appropriate divisions for all skill levels', image: '/basketball-divisions.jpeg' },
               { icon: MapPin, title: 'Premier Venues', description: 'State-of-the-art basketball facilities', image: '/basketball-venue.jpeg' }
             ].map((item, index) => {

@@ -58,7 +58,7 @@ const Register = () => {
               overflowWrap: 'break-word',
               hyphens: 'none'
             }}>
-              Sign up today, $350 dollars per team! Only $250 if you register before April 1st!!!
+              Sign up today, $250 dollars per team! Only $150 if you register before April 1st!!!
             </p>
           </motion.div>
           

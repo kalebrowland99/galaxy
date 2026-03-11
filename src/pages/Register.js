@@ -58,7 +58,7 @@ const Register = () => {
               overflowWrap: 'break-word',
               hyphens: 'none'
             }}>
-              $500 per team with a $250 dollar non-refundable down payment. Full payment due 2 weeks prior to event
+              Sign up today, $350 dollars per team! Only $250 if you register before April 1st!!!
             </p>
           </motion.div>
           

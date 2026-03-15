@@ -71,7 +71,7 @@ const Home = () => {
       <Hero />
       
       {/* Features Section */}
-      <section className="min-h-screen lg:h-screen flex items-center relative overflow-hidden py-16 lg:py-0" style={{
+      <section className="min-h-screen flex items-center relative overflow-hidden py-12 sm:py-16 lg:py-20" style={{
         background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)'
       }}>
         {/* Animated background elements */}
@@ -86,10 +86,10 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-8 lg:mb-16"
+            className="text-center mb-6 sm:mb-8 lg:mb-12"
           >
             <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 lg:mb-6 px-4"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 lg:mb-5 px-4"
               style={{
                 background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #60a5fa 100%)',
                 WebkitBackgroundClip: 'text',
@@ -100,7 +100,7 @@ const Home = () => {
             >
               Why Choose Galaxy23?
             </motion.h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-medium px-4">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto font-medium px-4">
               Experience the premier 7v7 football tournament. Compete against elite teams, 
               develop your skills, and create lasting memories. Where excellence meets opportunity.
             </p>
@@ -111,7 +111,7 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-items-center max-w-7xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 justify-items-center max-w-7xl mx-auto"
           >
             {features.map((feature, index) => {
               const Icon = feature.icon;
@@ -179,7 +179,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="min-h-screen lg:h-screen flex items-center relative overflow-hidden py-16 lg:py-0" style={{ 
+      <section className="min-h-screen flex items-center relative overflow-hidden py-12 sm:py-16 lg:py-20" style={{ 
         background: 'linear-gradient(180deg, #16213e 0%, #0f172a 100%)'
       }}>
         {/* Animated gradient orbs */}
@@ -196,7 +196,7 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-5 leading-tight"
             >
               <span className="block text-white font-light">Ready to</span>
               <span className="block font-black" style={{
@@ -208,7 +208,7 @@ const Home = () => {
                 Compete?
               </span>
             </motion.h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
               Secure your team's place in the premier 7v7 football tournament. 
               Limited spots available for elite competition. Registration is now open.
             </p>

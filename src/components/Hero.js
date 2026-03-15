@@ -29,7 +29,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen lg:h-screen flex items-center justify-center overflow-hidden" style={{
+    <div className="relative min-h-screen h-screen max-h-screen flex items-center justify-center overflow-hidden" style={{
       background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)'
     }}>
       {/* Subtle animated background elements */}
@@ -49,18 +49,18 @@ const Hero = () => {
       </div>
 
 
-      <div className="relative max-w-7xl mx-auto container-padding pt-24 pb-12 lg:pt-8 lg:pb-8" style={{ zIndex: 2 }}>
+      <div className="relative h-full max-h-full w-full max-w-7xl mx-auto container-padding py-3 sm:py-5 lg:py-4 flex items-center overflow-hidden" style={{ zIndex: 2 }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-5 lg:gap-6 xl:gap-8 items-center w-full min-h-0 max-h-full"
         >
           {/* Content */}
-          <motion.div variants={itemVariants} className="text-center lg:text-left space-y-6 lg:space-y-8">
+          <motion.div variants={itemVariants} className="text-center lg:text-left space-y-2 sm:space-y-3 lg:space-y-4 min-h-0 flex flex-col justify-center">
             {/* Headline */}
-            <motion.div variants={itemVariants} className="space-y-3 lg:space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+            <motion.div variants={itemVariants} className="space-y-2 lg:space-y-3 flex-shrink-0">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-black text-white leading-tight">
                 Galaxy23
                 <span className="block mt-2" style={{
                   background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)',
@@ -71,7 +71,7 @@ const Hero = () => {
                   Sports
                 </span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl mx-auto lg:mx-0 px-4 lg:px-0">
+              <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 px-4 lg:px-0">
                 Join the premier student athlete 7v7 football competition. Where talent meets opportunity.
               </p>
             </motion.div>
@@ -79,9 +79,9 @@ const Hero = () => {
             {/* Event Details Card */}
             <motion.div
               variants={itemVariants}
-              className="inline-block w-full max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0"
+              className="w-full max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0 flex-shrink min-h-0 overflow-hidden"
             >
-              <div className="rounded-2xl p-4 sm:p-6 backdrop-blur-xl border border-white/10 overflow-hidden"
+              <div className="rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-3 backdrop-blur-xl border border-white/10 overflow-hidden overflow-y-auto max-h-[48vh] lg:max-h-[38vh]"
                 style={{
                   background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
@@ -109,9 +109,9 @@ const Hero = () => {
                     </p>
                   </div>
                 </div>
-                <div className="mt-5 pt-4 border-t border-white/10">
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Event Flyer</p>
-                  <div className="rounded-xl overflow-hidden border border-white/10 bg-black/20 mx-auto lg:mx-0 w-full max-w-[280px]">
+                <div className="mt-3 pt-3 border-t border-white/10">
+                  <p className="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Event Flyer</p>
+                  <div className="rounded-lg overflow-hidden border border-white/10 bg-black/20 mx-auto lg:mx-0 w-full max-w-[180px] sm:max-w-[200px] lg:max-w-[180px]">
                     <img
                       src="/7v7 flyer.jpeg"
                       alt="7v7 Tournament Flyer"
@@ -125,7 +125,7 @@ const Hero = () => {
             {/* CTA Button */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-4 lg:px-0"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start px-4 lg:px-0 flex-shrink-0"
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                 <Link
@@ -146,22 +146,22 @@ const Hero = () => {
           {/* Logo Card */}
           <motion.div
             variants={itemVariants}
-            className="relative px-4 lg:px-0"
+            className="relative px-4 lg:px-0 flex items-center justify-center min-h-0"
           >
-            <div className="rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10"
+            <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-full max-w-md"
               style={{
                 background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8))',
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)'
               }}
             >
-              <div className="p-4 sm:p-6 md:p-8">
-                <div className="relative rounded-xl overflow-hidden flex items-center justify-center">
+              <div className="p-3 sm:p-4 lg:p-6">
+                <div className="relative rounded-lg overflow-hidden flex items-center justify-center">
                   <img
                     src="/galaxy sports logo.JPG"
                     alt="Galaxy23 Sports Logo"
                     className="w-full h-auto object-contain"
                     style={{
-                      maxHeight: '300px'
+                      maxHeight: 'clamp(140px, 24vh, 220px)'
                     }}
                   />
                 </div>

@@ -111,7 +111,7 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 justify-items-center max-w-7xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 justify-items-center max-w-7xl mx-auto w-full min-w-0"
           >
             {features.map((feature, index) => {
               const Icon = feature.icon;
@@ -120,7 +120,7 @@ const Home = () => {
                   key={index}
                   variants={itemVariants}
                   whileHover={{ y: -8 }}
-                  className="group w-full rounded-2xl overflow-hidden"
+                  className="group w-full max-w-full min-w-0 rounded-2xl overflow-hidden"
                   style={{
                     background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
                     backdropFilter: 'blur(10px)',

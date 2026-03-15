@@ -29,7 +29,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen h-screen max-h-screen flex items-center justify-center overflow-hidden" style={{
+    <div className="relative min-h-screen lg:h-screen lg:max-h-screen flex items-start lg:items-center justify-center overflow-y-auto lg:overflow-hidden overflow-x-hidden" style={{
       background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)'
     }}>
       {/* Subtle animated background elements */}
@@ -49,12 +49,12 @@ const Hero = () => {
       </div>
 
 
-      <div className="relative h-full max-h-full w-full max-w-7xl mx-auto container-padding py-3 sm:py-5 lg:py-4 flex items-center overflow-hidden" style={{ zIndex: 2 }}>
+      <div className="relative min-h-full lg:h-full lg:max-h-full w-full max-w-7xl mx-auto container-padding py-4 sm:py-5 lg:py-4 flex items-center overflow-visible lg:overflow-hidden" style={{ zIndex: 2 }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-5 lg:gap-6 xl:gap-8 items-center w-full min-h-0 max-h-full"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 xl:gap-8 items-center w-full min-h-0 lg:max-h-full"
         >
           {/* Content - same max width as right column for symmetry */}
           <motion.div variants={itemVariants} className="text-center lg:text-left space-y-2 sm:space-y-3 lg:space-y-4 min-h-0 flex flex-col justify-center w-full max-w-md mx-auto lg:mx-0">
@@ -81,7 +81,7 @@ const Hero = () => {
               variants={itemVariants}
               className="w-full px-4 lg:px-0 flex-shrink min-h-0 overflow-hidden"
             >
-              <div className="rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-3 backdrop-blur-xl border border-white/10 overflow-hidden overflow-y-auto max-h-[48vh] lg:max-h-[38vh]"
+              <div className="rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-3 backdrop-blur-xl border border-white/10 overflow-hidden overflow-y-auto max-h-[40vh] sm:max-h-[45vh] lg:max-h-[38vh]"
                 style={{
                   background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
@@ -149,11 +149,8 @@ const Hero = () => {
                 <img
                   src="/galaxy sports logo.JPG"
                   alt="Galaxy23 Sports Logo"
-                  className="h-auto object-contain block"
-                  style={{
-                    maxHeight: 'clamp(100px, 18vh, 165px)',
-                    width: 'auto'
-                  }}
+                  className="h-auto object-contain block max-h-[72px] sm:max-h-[90px] lg:max-h-[165px]"
+                  style={{ width: 'auto' }}
                 />
               </div>
             </div>
@@ -164,13 +161,12 @@ const Hero = () => {
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)'
               }}
             >
-              <div className="p-3 sm:p-4 lg:p-6">
+              <div className="p-2 sm:p-3 lg:p-6">
                 <div className="rounded-lg overflow-hidden border border-white/10 bg-black/20 w-full">
                   <img
                     src="/7v7 flyer.jpeg"
                     alt="7v7 Tournament Flyer"
-                    className="w-full h-auto object-contain block"
-                    style={{ maxHeight: 'clamp(320px, 52vh, 480px)' }}
+                    className="w-full h-auto object-contain block max-h-[26vh] sm:max-h-[36vh] lg:max-h-[480px]"
                   />
                 </div>
               </div>

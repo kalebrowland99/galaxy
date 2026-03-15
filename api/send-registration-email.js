@@ -1,7 +1,7 @@
 // Vercel Serverless Function to send registration emails via Resend
 const { Resend } = require('resend');
 
-const resend = new Resend('re_4ww15fSc_FZNEGFEKKRq32f6q4WY7th59');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 module.exports = async function handler(req, res) {
   // Only allow POST requests

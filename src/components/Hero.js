@@ -138,24 +138,23 @@ const Hero = () => {
             variants={itemVariants}
             className="relative px-4 lg:px-0 flex flex-col items-center justify-center gap-3 sm:gap-4 min-h-0 w-full max-w-md mx-auto lg:mx-0"
           >
-            {/* Galaxy Sports Logo Card */}
-            <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-full"
+            {/* Galaxy Sports Logo Card - fits snugly around logo */}
+            <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-fit max-w-full mx-auto"
               style={{
                 background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8))',
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)'
               }}
             >
-              <div className="p-3 sm:p-4 lg:p-6">
-                <div className="relative rounded-lg overflow-hidden flex items-center justify-center">
-                  <img
-                    src="/galaxy sports logo.JPG"
-                    alt="Galaxy23 Sports Logo"
-                    className="w-full h-auto object-contain"
-                    style={{
-                      maxHeight: 'clamp(100px, 18vh, 165px)'
-                    }}
-                  />
-                </div>
+              <div className="p-2 sm:p-3 flex items-center justify-center">
+                <img
+                  src="/galaxy sports logo.JPG"
+                  alt="Galaxy23 Sports Logo"
+                  className="h-auto object-contain block"
+                  style={{
+                    maxHeight: 'clamp(100px, 18vh, 165px)',
+                    width: 'auto'
+                  }}
+                />
               </div>
             </div>
             {/* Event Flyer Card - same width and padding as logo for symmetry */}

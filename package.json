@@ -2,6 +2,7 @@
   "name": "galaxy23-tournament",
   "version": "1.0.0",
   "description": "Galaxy23 Flag Football Tournament Registration Website",
+  "homepage": "https://kalebrowland99.github.io/galaxy",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

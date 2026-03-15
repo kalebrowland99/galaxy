@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { saveRegistration } from '../firebase/registrationService';
+import emailjs from '@emailjs/browser';
 
 const RegistrationForm = () => {
   const [step, setStep] = useState(1);
@@ -87,6 +88,37 @@ const RegistrationForm = () => {
         localStorage.setItem('galaxy23_registration', JSON.stringify(fallbackData));
         console.log('Registration saved to localStorage as fallback:', fallbackData);
         toast.success('Registration saved locally (Firebase unavailable).');
+      }
+      
+      // Send email notification to galaxycorp23@gmail.com
+      try {
+        const emailParams = {
+          to_email: 'galaxycorp23@gmail.com',
+          team_name: data.teamName,
+          age_group: data.ageGroup,
+          player_count: data.playerCount,
+          experience_level: data.experienceLevel,
+          coach_name: data.coachName,
+          coach_email: data.coachEmail,
+          coach_phone: data.coachPhone,
+          coach_birthday: data.coachBirthday,
+          emergency_name: data.emergencyName,
+          emergency_phone: data.emergencyPhone,
+          payment_status: 'AWAITING PAYMENT',
+          registration_date: new Date().toLocaleString(),
+        };
+        
+        // EmailJS configuration - you'll need to set these up
+        await emailjs.send(
+          'YOUR_SERVICE_ID', // You'll need to create this at emailjs.com
+          'YOUR_TEMPLATE_ID', // You'll need to create this at emailjs.com
+          emailParams,
+          'YOUR_PUBLIC_KEY' // You'll need to get this from emailjs.com
+        );
+        console.log('Email notification sent successfully');
+      } catch (emailError) {
+        console.error('Failed to send email notification:', emailError);
+        // Don't fail the registration if email fails
       }
       
       toast.success('Registration submitted successfully!');

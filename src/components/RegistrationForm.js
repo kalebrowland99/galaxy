@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { 
-  AlertCircle, CheckCircle, CreditCard, FileText, Shield 
+  AlertCircle, CheckCircle, FileText, Shield 
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { saveRegistration } from '../firebase/registrationService';

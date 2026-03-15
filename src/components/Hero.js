@@ -81,12 +81,19 @@ const Hero = () => {
               variants={itemVariants}
               className="inline-block w-full max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0"
             >
-              <div className="rounded-2xl p-4 sm:p-6 backdrop-blur-xl border border-white/10"
+              <div className="rounded-2xl p-4 sm:p-6 backdrop-blur-xl border border-white/10 overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
                 }}
               >
+                <div className="rounded-xl overflow-hidden mb-4">
+                  <img
+                    src="/7v7 flyer.jpeg"
+                    alt="7v7 Tournament Flyer"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

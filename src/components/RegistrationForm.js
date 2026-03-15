@@ -89,43 +89,7 @@ const RegistrationForm = () => {
         toast.success('Registration saved locally (Firebase unavailable).');
       }
       
-      // Send email notification via webhook
-      try {
-        const emailData = {
-          to: 'galaxycorp23@gmail.com',
-          subject: `New Team Registration: ${data.teamName}`,
-          teamName: data.teamName,
-          ageGroup: data.ageGroup,
-          playerCount: data.playerCount,
-          experienceLevel: data.experienceLevel,
-          coachName: data.coachName,
-          coachEmail: data.coachEmail,
-          coachPhone: data.coachPhone,
-          coachBirthday: data.coachBirthday,
-          emergencyName: data.emergencyName,
-          emergencyPhone: data.emergencyPhone,
-          paymentStatus: 'AWAITING PAYMENT',
-          registrationDate: new Date().toLocaleString(),
-        };
-        
-        // Send to webhook - now using your deployed Vercel function
-        const response = await fetch('https://express-js-on-vercel-eta-sandy.vercel.app/api/send-registration-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(emailData),
-        });
-        
-        if (response.ok) {
-          console.log('Email notification sent successfully');
-        } else {
-          console.error('Failed to send email notification');
-        }
-      } catch (emailError) {
-        console.error('Failed to send email notification:', emailError);
-        // Don't fail the registration if email fails
-      }
+      // Firebase Cloud Function will automatically send emails when registration is saved
       
       toast.success('Registration submitted successfully!');
       

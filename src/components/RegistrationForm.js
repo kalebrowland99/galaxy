@@ -470,27 +470,30 @@ const RegistrationForm = () => {
       <div className="text-center mb-8">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 font-display">Review & Waiver</h2>
         <p className="text-gray-600 mt-2">Review your registration and agree to the liability waiver.</p>
+        <div className="mt-4 p-4 bg-green-50 border-2 border-green-500 rounded-lg">
+          <p className="text-green-800 font-semibold">✓ No payment required at this time - Register your team now, pay later!</p>
+        </div>
       </div>
 
       {/* Payment Information */}
       <div className="card">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Payment Information</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Payment Information (Payment NOT Required Now)</h3>
         <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
           <div>
             <p className="font-medium text-gray-900">Team Registration Deposit</p>
-            <p className="text-sm text-gray-600">Non-refundable deposit to secure your spot</p>
+            <p className="text-sm text-gray-600">Pay after registration is complete</p>
           </div>
           <div className="text-right">
             <p className="text-2xl font-bold text-galaxy-600">$150</p>
             <p className="text-sm text-gray-500">USD</p>
           </div>
         </div>
-        <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <h4 className="font-semibold text-blue-800 mb-2">Payment Details</h4>
-          <ul className="text-sm text-blue-700 space-y-1">
+        <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+          <h4 className="font-semibold text-green-800 mb-2">✓ Register Now, Pay Later</h4>
+          <ul className="text-sm text-green-700 space-y-1">
+            <li>• Complete your registration without payment</li>
+            <li>• Payment instructions will be sent via email</li>
             <li>• Full payment is due 3 weeks prior to the event</li>
-            <li>• Payment can be made after registration</li>
-            <li>• You'll receive payment instructions via email</li>
             <li>• Contact us at galaxycorp23@gmail.com for payment questions</li>
           </ul>
         </div>

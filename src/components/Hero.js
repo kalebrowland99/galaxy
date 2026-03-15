@@ -87,13 +87,6 @@ const Hero = () => {
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
                 }}
               >
-                <div className="rounded-xl overflow-hidden mb-4">
-                  <img
-                    src="/7v7 flyer.jpeg"
-                    alt="7v7 Tournament Flyer"
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +97,7 @@ const Hero = () => {
                     <h3 className="text-xs sm:text-sm font-semibold text-blue-400 uppercase tracking-wider mb-1 sm:mb-2">
                       Upcoming Event
                     </h3>
-                    <p className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2 leading-snug">
+                    <p className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 sm:mb-3 leading-snug break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                       April 25th and 26th at Ray Hughes Stadium, Home of the Oakland Patriots, The 9-Time 6A Tennessee Football State Champions
                     </p>
                     <p className="text-sm sm:text-base text-gray-400 flex items-center gap-2">
@@ -112,8 +105,18 @@ const Hero = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="truncate">Murfreesboro, TN</span>
+                      <span>Murfreesboro, TN</span>
                     </p>
+                  </div>
+                </div>
+                <div className="mt-5 pt-4 border-t border-white/10">
+                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Event Flyer</p>
+                  <div className="rounded-xl overflow-hidden border border-white/10 bg-black/20 mx-auto lg:mx-0 w-full max-w-[280px]">
+                    <img
+                      src="/7v7 flyer.jpeg"
+                      alt="7v7 Tournament Flyer"
+                      className="w-full h-auto object-contain block"
+                    />
                   </div>
                 </div>
               </div>

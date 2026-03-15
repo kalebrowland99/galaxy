@@ -109,16 +109,6 @@ const Hero = () => {
                     </p>
                   </div>
                 </div>
-                <div className="mt-3 pt-3 border-t border-white/10">
-                  <p className="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Event Flyer</p>
-                  <div className="rounded-lg overflow-hidden border border-white/10 bg-black/20 mx-auto lg:mx-0 w-full max-w-[180px] sm:max-w-[200px] lg:max-w-[180px]">
-                    <img
-                      src="/7v7 flyer.jpeg"
-                      alt="7v7 Tournament Flyer"
-                      className="w-full h-auto object-contain block"
-                    />
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -143,11 +133,12 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Logo Card */}
+          {/* Right column: Logo + Event Flyer */}
           <motion.div
             variants={itemVariants}
-            className="relative px-4 lg:px-0 flex items-center justify-center min-h-0"
+            className="relative px-4 lg:px-0 flex flex-col items-center justify-center gap-3 sm:gap-4 min-h-0"
           >
+            {/* Galaxy Sports Logo Card */}
             <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-full max-w-md"
               style={{
                 background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8))',
@@ -163,6 +154,25 @@ const Hero = () => {
                     style={{
                       maxHeight: 'clamp(140px, 24vh, 220px)'
                     }}
+                  />
+                </div>
+              </div>
+            </div>
+            {/* Event Flyer Card - same width/style as logo for symmetry */}
+            <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-full max-w-md"
+              style={{
+                background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8))',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)'
+              }}
+            >
+              <div className="p-3 sm:p-4 lg:p-4">
+                <p className="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 text-center">Event Flyer</p>
+                <div className="rounded-lg overflow-hidden border border-white/10 bg-black/20 w-full">
+                  <img
+                    src="/7v7 flyer.jpeg"
+                    alt="7v7 Tournament Flyer"
+                    className="w-full h-auto object-contain block"
+                    style={{ maxHeight: 'clamp(120px, 20vh, 180px)' }}
                   />
                 </div>
               </div>

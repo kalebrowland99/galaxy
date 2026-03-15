@@ -5,7 +5,6 @@
   "homepage": "https://galaxy23corp.com",
   "private": true,
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@stripe/react-stripe-js": "^2.1.2",
     "@stripe/stripe-js": "^1.52.1",
     "@testing-library/jest-dom": "^5.16.4",

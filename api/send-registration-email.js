@@ -1,9 +1,9 @@
 // Vercel Serverless Function to send registration emails via Resend
-import { Resend } from 'resend';
+const { Resend } = require('resend');
 
 const resend = new Resend('re_4ww15fSc_FZNEGFEKKRq32f6q4WY7th59');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -147,4 +147,4 @@ export default async function handler(req, res) {
     console.error('Error sending emails:', error);
     return res.status(500).json({ error: 'Failed to send emails', details: error.message });
   }
-}
+};

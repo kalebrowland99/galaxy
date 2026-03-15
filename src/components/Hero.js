@@ -152,7 +152,7 @@ const Hero = () => {
                     alt="Galaxy23 Sports Logo"
                     className="w-full h-auto object-contain"
                     style={{
-                      maxHeight: 'clamp(140px, 24vh, 220px)'
+                      maxHeight: 'clamp(70px, 12vh, 110px)'
                     }}
                   />
                 </div>
@@ -171,7 +171,7 @@ const Hero = () => {
                     src="/7v7 flyer.jpeg"
                     alt="7v7 Tournament Flyer"
                     className="w-full h-auto object-contain block"
-                    style={{ maxHeight: 'clamp(180px, 30vh, 270px)' }}
+                    style={{ maxHeight: 'clamp(270px, 45vh, 405px)' }}
                   />
                 </div>
               </div>

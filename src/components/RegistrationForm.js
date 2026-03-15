@@ -89,14 +89,10 @@ const RegistrationForm = () => {
         toast.success('Registration saved locally (Firebase unavailable).');
       }
       
-      toast.success('Registration form submitted! Redirecting to payment...');
+      toast.success('Registration submitted successfully!');
       
-      // Redirect to Stripe payment link after a short delay
-      setTimeout(() => {
-        const successUrl = encodeURIComponent(`${window.location.origin}/payment-success`);
-        const cancelUrl = encodeURIComponent(`${window.location.origin}/register`);
-        window.location.href = `https://buy.stripe.com/bJe6oH81275XcR84Owa7C09?success_url=${successUrl}&cancel_url=${cancelUrl}`;
-      }, 1500);
+      // Show success state instead of redirecting to payment
+      setStep(4);
       
     } catch (error) {
       console.error('Error in registration process:', error);
@@ -472,13 +468,13 @@ const RegistrationForm = () => {
       className="space-y-6"
     >
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 font-display">Payment & Waiver</h2>
-        <p className="text-gray-600 mt-2">Full payment is due 3 weeks prior to the event. *All dates subject to change.</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 font-display">Review & Waiver</h2>
+        <p className="text-gray-600 mt-2">Review your registration and agree to the liability waiver.</p>
       </div>
 
-      {/* Registration Deposit */}
+      {/* Payment Information */}
       <div className="card">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Registration Deposit</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Payment Information</h3>
         <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
           <div>
             <p className="font-medium text-gray-900">Team Registration Deposit</p>
@@ -488,6 +484,15 @@ const RegistrationForm = () => {
             <p className="text-2xl font-bold text-galaxy-600">$150</p>
             <p className="text-sm text-gray-500">USD</p>
           </div>
+        </div>
+        <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <h4 className="font-semibold text-blue-800 mb-2">Payment Details</h4>
+          <ul className="text-sm text-blue-700 space-y-1">
+            <li>• Full payment is due 3 weeks prior to the event</li>
+            <li>• Payment can be made after registration</li>
+            <li>• You'll receive payment instructions via email</li>
+            <li>• Contact us at galaxycorp23@gmail.com for payment questions</li>
+          </ul>
         </div>
         <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
           <h4 className="font-semibold text-yellow-800 mb-2">Refund Policy</h4>
@@ -535,32 +540,6 @@ const RegistrationForm = () => {
         </div>
       </div>
 
-      {/* Payment Method */}
-      <div className="card">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <CreditCard className="w-5 h-5 mr-2" />
-          Payment Method
-        </h3>
-        <p className="text-gray-600 mb-4">
-          After completing this form, you'll be redirected to our secure Stripe payment page to pay the $150 deposit.
-        </p>
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <p className="text-blue-800 text-sm">
-            <strong>Secure Payment:</strong> Your payment will be processed securely through Stripe. You'll receive a receipt via email once payment is completed.
-          </p>
-        </div>
-        <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-          <p className="text-yellow-800 text-sm">
-            <strong>Important:</strong> Registration is not complete until payment is processed successfully. Payment is required to secure your team's spot.
-          </p>
-        </div>
-        <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800 text-sm">
-            <strong>After Payment:</strong> Once payment is completed, you'll receive a confirmation email and your team will be officially registered for the tournament.
-          </p>
-        </div>
-      </div>
-
       <div className="flex flex-col sm:flex-row justify-between gap-4">
         <button
           type="button"
@@ -580,7 +559,7 @@ const RegistrationForm = () => {
               Processing...
             </div>
           ) : (
-            'Submit Registration & Proceed to Payment'
+            'Complete Registration'
           )}
         </button>
       </div>
@@ -605,11 +584,19 @@ const RegistrationForm = () => {
       <div className="bg-green-50 border border-green-200 rounded-lg p-6">
         <h3 className="font-semibold text-green-800 mb-2">What's Next?</h3>
         <ul className="text-sm text-green-700 space-y-1">
-          <li>• Check your email for confirmation and receipt</li>
+          <li>• Check your email for confirmation and payment instructions</li>
+          <li>• Payment of $150 deposit is due to secure your spot</li>
+          <li>• Full payment is due 3 weeks prior to the event</li>
           <li>• Review tournament rules and schedule</li>
           <li>• Prepare your team roster</li>
           <li>• Check-in begins 1 hour before your first game</li>
         </ul>
+      </div>
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <h3 className="font-semibold text-blue-800 mb-2">Payment Information</h3>
+        <p className="text-sm text-blue-700">
+          You can make your payment by contacting us at <strong>galaxycorp23@gmail.com</strong> or by calling us. Payment instructions have been sent to your email.
+        </p>
       </div>
       <div className="space-y-3">
         <button

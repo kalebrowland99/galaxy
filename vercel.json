@@ -1,5 +1,6 @@
 {
-  "buildCommand": "echo 'API only - no build needed'",
+  "buildCommand": "mkdir -p .vercel/output/functions && cp -r api/* .vercel/output/functions/",
   "installCommand": "cd api && npm install",
-  "framework": null
+  "framework": null,
+  "outputDirectory": ".vercel/output"
 }

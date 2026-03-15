@@ -56,10 +56,10 @@ const Hero = () => {
           animate="visible"
           className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-5 lg:gap-6 xl:gap-8 items-center w-full min-h-0 max-h-full"
         >
-          {/* Content */}
-          <motion.div variants={itemVariants} className="text-center lg:text-left space-y-2 sm:space-y-3 lg:space-y-4 min-h-0 flex flex-col justify-center">
+          {/* Content - same max width as right column for symmetry */}
+          <motion.div variants={itemVariants} className="text-center lg:text-left space-y-2 sm:space-y-3 lg:space-y-4 min-h-0 flex flex-col justify-center w-full max-w-md mx-auto lg:mx-0">
             {/* Headline */}
-            <motion.div variants={itemVariants} className="space-y-2 lg:space-y-3 flex-shrink-0">
+            <motion.div variants={itemVariants} className="space-y-2 lg:space-y-3 flex-shrink-0 px-4 lg:px-0">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-black text-white leading-tight">
                 Galaxy23
                 <span className="block mt-2" style={{
@@ -71,7 +71,7 @@ const Hero = () => {
                   Sports
                 </span>
               </h1>
-              <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 px-4 lg:px-0">
+              <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
                 Join the premier student athlete 7v7 football competition. Where talent meets opportunity.
               </p>
             </motion.div>
@@ -79,7 +79,7 @@ const Hero = () => {
             {/* Event Details Card */}
             <motion.div
               variants={itemVariants}
-              className="w-full max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0 flex-shrink min-h-0 overflow-hidden"
+              className="w-full px-4 lg:px-0 flex-shrink min-h-0 overflow-hidden"
             >
               <div className="rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-3 backdrop-blur-xl border border-white/10 overflow-hidden overflow-y-auto max-h-[48vh] lg:max-h-[38vh]"
                 style={{
@@ -115,7 +115,7 @@ const Hero = () => {
             {/* CTA Button */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start px-4 lg:px-0 flex-shrink-0"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start flex-shrink-0 px-4 lg:px-0"
             >
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                 <Link
@@ -133,13 +133,13 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right column: Logo + Event Flyer */}
+          {/* Right column: Logo + Event Flyer - same max width as left for symmetry */}
           <motion.div
             variants={itemVariants}
-            className="relative px-4 lg:px-0 flex flex-col items-center justify-center gap-3 sm:gap-4 min-h-0"
+            className="relative px-4 lg:px-0 flex flex-col items-center justify-center gap-3 sm:gap-4 min-h-0 w-full max-w-md mx-auto lg:mx-0"
           >
             {/* Galaxy Sports Logo Card */}
-            <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-full max-w-md"
+            <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-full"
               style={{
                 background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8))',
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)'
@@ -158,21 +158,20 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            {/* Event Flyer Card - same width/style as logo for symmetry */}
-            <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-full max-w-md"
+            {/* Event Flyer Card - same width and padding as logo for symmetry */}
+            <div className="rounded-xl lg:rounded-2xl overflow-hidden backdrop-blur-xl border border-white/10 w-full"
               style={{
                 background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8))',
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)'
               }}
             >
-              <div className="p-3 sm:p-4 lg:p-4">
-                <p className="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 text-center">Event Flyer</p>
+              <div className="p-3 sm:p-4 lg:p-6">
                 <div className="rounded-lg overflow-hidden border border-white/10 bg-black/20 w-full">
                   <img
                     src="/7v7 flyer.jpeg"
                     alt="7v7 Tournament Flyer"
                     className="w-full h-auto object-contain block"
-                    style={{ maxHeight: 'clamp(120px, 20vh, 180px)' }}
+                    style={{ maxHeight: 'clamp(180px, 30vh, 270px)' }}
                   />
                 </div>
               </div>

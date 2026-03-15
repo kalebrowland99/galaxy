@@ -151,7 +151,7 @@ const RegistrationForm = () => {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Choose your category *
+            Choose age group *
           </label>
           <select
             {...register('ageGroup', { required: 'Category is required' })}

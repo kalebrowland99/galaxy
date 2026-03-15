@@ -108,8 +108,8 @@ const RegistrationForm = () => {
           registrationDate: new Date().toLocaleString(),
         };
         
-        // Send to webhook - you'll need to set up this endpoint
-        const response = await fetch('https://YOUR_WEBHOOK_URL/send-registration-email', {
+        // Send to webhook - now using your deployed Vercel function
+        const response = await fetch('https://express-js-on-vercel-eta-sandy.vercel.app/api/send-registration-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

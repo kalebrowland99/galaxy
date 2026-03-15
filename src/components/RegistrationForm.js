@@ -157,7 +157,7 @@ const RegistrationForm = () => {
             {...register('ageGroup', { required: 'Category is required' })}
             className="input-field"
           >
-            <option value="">Select category</option>
+            <option value="">Select Age Group</option>
             <option value="9U">9U</option>
             <option value="10U">10U</option>
             <option value="12U">12U</option>

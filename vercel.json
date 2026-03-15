@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd api && npm install",
+  "installCommand": "cd api && npm install"
+}

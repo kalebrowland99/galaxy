@@ -92,3 +92,5 @@ public/*.MOV
 public/*.mov
 *.MOV
 *.mov
+.vercel
+.env*.local

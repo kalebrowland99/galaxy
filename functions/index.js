@@ -4,14 +4,18 @@ const { Resend } = require('resend');
 
 admin.initializeApp();
 
-// Initialize Resend with API key from environment variable
-const resend = new Resend(functions.config().resend.api_key);
-
 // This function triggers when a new registration is added to Firestore
-exports.sendRegistrationEmails = functions.firestore
+exports.sendRegistrationEmails = functions
+  .runWith({
+    secrets: ['RESEND_API_KEY']
+  })
+  .firestore
   .document('registrations/{registrationId}')
   .onCreate(async (snap, context) => {
     try {
+      // Initialize Resend with API key from environment variable
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      
       const registration = snap.data();
       
       // Extract registration data
@@ -43,21 +47,16 @@ exports.sendRegistrationEmails = functions.firestore
 
       // Email 1: Send payment link to the coach/team
       await resend.emails.send({
-        from: 'Galaxy23 Registration <onboarding@resend.dev>',
+        from: 'Galaxy23 Registration <noreply@galaxy23corp.com>',
         to: [coachEmail],
-        subject: `Registration Confirmed - ${teamName} - Payment Required`,
+        reply_to: 'galaxy23sports@gmail.com',
+        subject: `Thank You for Registering - ${teamName}`,
         html: `
-          <h1>Thank You for Registering!</h1>
+          <h1>Thank you for registering for Galaxy23 Sports 7v7 Tournament!</h1>
           
           <p>Hi ${coachName},</p>
           
-          <p>Your team <strong>${teamName}</strong> has been successfully registered for the Galaxy23 7v7 Football Tournament!</p>
-          
-          <h2>Next Step: Complete Your Payment</h2>
-          
-          <p>To secure your team's spot, please complete the payment:</p>
-          
-          <p><strong>${pricingText}</strong></p>
+          <p>Follow the link to pay for registration, and lock in your spot.</p>
           
           <p style="margin: 30px 0;">
             <a href="${stripeLink}" 
@@ -67,40 +66,40 @@ exports.sendRegistrationEmails = functions.firestore
                       text-decoration: none; 
                       border-radius: 5px;
                       display: inline-block;
-                      font-weight: bold;">
-              Complete Payment Now
+                      font-weight: bold;
+                      font-size: 18px;">
+              Pay Now - ${pricingText}
             </a>
           </p>
+          
+          <p><strong>Pricing:</strong></p>
+          <ul>
+            <li><strong>Before April 1st:</strong> $150 deposit</li>
+            <li><strong>After April 1st:</strong> $250 deposit</li>
+          </ul>
           
           <p>Or copy and paste this link into your browser:<br>
           <a href="${stripeLink}">${stripeLink}</a></p>
           
-          <h3>Registration Details</h3>
+          <hr style="margin: 30px 0;">
+          
+          <p><strong>Your Registration Details:</strong></p>
           <p><strong>Team Name:</strong> ${teamName}</p>
           <p><strong>Age Group:</strong> ${ageGroup}</p>
           <p><strong>Number of Players:</strong> ${playerCount}</p>
-          <p><strong>Experience Level:</strong> ${experienceLevel}</p>
           
-          <hr>
-          
-          <p><strong>Important:</strong></p>
-          <ul>
-            <li>Full payment is due 3 weeks prior to the event</li>
-            <li>All dates are subject to change</li>
-            <li>Check-in begins 1 hour before your first game</li>
-          </ul>
-          
-          <p>If you have any questions, contact us at <a href="mailto:galaxycorp23@gmail.com">galaxycorp23@gmail.com</a></p>
+          <p style="margin-top: 30px;">If you have any questions, contact us at <a href="mailto:galaxy23sports@gmail.com">galaxy23sports@gmail.com</a></p>
           
           <p>See you on the field!</p>
-          <p><em>- Galaxy23 Team</em></p>
+          <p><em>- Galaxy23 Sports Team</em></p>
         `,
       });
 
       // Email 2: Send registration details to owner
       await resend.emails.send({
-        from: 'Galaxy23 Registration <onboarding@resend.dev>',
-        to: ['galaxycorp23@gmail.com'],
+        from: 'Galaxy23 Registration <noreply@galaxy23corp.com>',
+        to: ['galaxy23sports@gmail.com'],
+        reply_to: coachEmail,
         subject: `New Team Registration: ${teamName}`,
         html: `
           <h1>NEW TEAM REGISTRATION RECEIVED</h1>

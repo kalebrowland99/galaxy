@@ -291,7 +291,7 @@ const Sponsors = () => {
                   className="w-full mt-6 sm:mt-8 btn-primary text-sm sm:text-base"
                   onClick={() => {
                     // Open email client with sponsorship inquiry
-                    window.location.href = 'mailto:galaxycorp23@gmail.com?subject=Sponsorship Inquiry - ' + tier.name + ' Tier&cc=dominickpendergrass@proton.me,schneiderjacob@hotmail.com';
+                    window.location.href = 'mailto:galaxy23sports@gmail.com?subject=Sponsorship Inquiry - ' + tier.name + ' Tier&cc=dominickpendergrass@proton.me,schneiderjacob@hotmail.com';
                   }}
                 >
                   Become a {tier.name} Sponsor
@@ -322,7 +322,7 @@ const Sponsors = () => {
                 className="btn-secondary"
                 onClick={() => {
                   // Open email client with contact form
-                  window.location.href = 'mailto:galaxycorp23@gmail.com?subject=Partnership Inquiry&cc=dominickpendergrass@proton.me,schneiderjacob@hotmail.com';
+                  window.location.href = 'mailto:galaxy23sports@gmail.com?subject=Partnership Inquiry&cc=dominickpendergrass@proton.me,schneiderjacob@hotmail.com';
                 }}
               >
                 Contact Us Today
@@ -331,7 +331,7 @@ const Sponsors = () => {
                 className="btn-outline"
                 onClick={() => {
                   // Download sponsorship kit (placeholder)
-                  alert('Sponsorship kit download would be implemented here. For now, please contact us at galaxycorp23@gmail.com');
+                  alert('Sponsorship kit download would be implemented here. For now, please contact us at galaxy23sports@gmail.com');
                 }}
               >
                 Download Sponsorship Kit

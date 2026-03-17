@@ -496,7 +496,7 @@ const RegistrationForm = () => {
             <li>• Complete your registration without payment</li>
             <li>• Payment instructions will be sent via email</li>
             <li>• Full payment is due 3 weeks prior to the event</li>
-            <li>• Contact us at galaxycorp23@gmail.com for payment questions</li>
+            <li>• Contact us at galaxy23sports@gmail.com for payment questions</li>
           </ul>
         </div>
         <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
@@ -600,7 +600,7 @@ const RegistrationForm = () => {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
         <h3 className="font-semibold text-blue-800 mb-2">Payment Information</h3>
         <p className="text-sm text-blue-700">
-          You can make your payment by contacting us at <strong>galaxycorp23@gmail.com</strong> or by calling us. Payment instructions have been sent to your email.
+          You can make your payment by contacting us at <strong>galaxy23sports@gmail.com</strong> or by calling us. Payment instructions have been sent to your email.
         </p>
       </div>
       <div className="space-y-3">
